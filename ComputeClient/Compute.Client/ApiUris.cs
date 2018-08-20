@@ -194,7 +194,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri NetworkDomain(Guid orgId, Guid networkDomainId)
         {
             return new Uri(
-                string.Format(MCP2_7_PREFIX + "{0}/network/networkDomain/{1}", orgId, networkDomainId),
+                string.Format(MCP2_8_PREFIX + "{0}/network/networkDomain/{1}", orgId, networkDomainId),
                 UriKind.Relative);
         }
 
