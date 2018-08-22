@@ -316,84 +316,179 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("deployVlan", Namespace = "urn:didata.com:api:cloud:types",
-        IsNullable = false)]
-    public partial class DeployVlanType
-    {
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute("deployVlan", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class DeployVlanType
+	{
 
-        private string networkDomainIdField;
+		private string networkDomainIdField;
 
-        private string nameField;
+		private string nameField;
 
-        private string descriptionField;
+		private string descriptionField;
 
-        private string privateIpv4BaseAddressField;
+		private string privateIpv4NetworkAddressField;
 
-        private int privateIpv4PrefixSizeField;
+		private int privateIpv4PrefixSizeField;
 
-        private bool privateIpv4PrefixSizeFieldSpecified;
+		private bool privateIpv4PrefixSizeFieldSpecified;
 
-        private string gatewayAddressingField;
+		private object itemField;
 
-        /// <remarks/>
-        public string networkDomainId
-        {
-            get { return this.networkDomainIdField; }
-            set { this.networkDomainIdField = value; }
-        }
+		/// <remarks/>
+		public string networkDomainId
+		{
+			get
+			{
+				return this.networkDomainIdField;
+			}
+			set
+			{
+				this.networkDomainIdField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string name
-        {
-            get { return this.nameField; }
-            set { this.nameField = value; }
-        }
+		/// <remarks/>
+		public string name
+		{
+			get
+			{
+				return this.nameField;
+			}
+			set
+			{
+				this.nameField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string description
-        {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
-        }
+		/// <remarks/>
+		public string description
+		{
+			get
+			{
+				return this.descriptionField;
+			}
+			set
+			{
+				this.descriptionField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string privateIpv4BaseAddress
-        {
-            get { return this.privateIpv4BaseAddressField; }
-            set { this.privateIpv4BaseAddressField = value; }
-        }
+		/// <remarks/>
+		public string privateIpv4NetworkAddress
+		{
+			get
+			{
+				return this.privateIpv4NetworkAddressField;
+			}
+			set
+			{
+				this.privateIpv4NetworkAddressField = value;
+			}
+		}
 
-        /// <remarks/>
-        public int privateIpv4PrefixSize
-        {
-            get { return this.privateIpv4PrefixSizeField; }
-            set { this.privateIpv4PrefixSizeField = value; }
-        }
+		/// <remarks/>
+		public int privateIpv4PrefixSize
+		{
+			get
+			{
+				return this.privateIpv4PrefixSizeField;
+			}
+			set
+			{
+				this.privateIpv4PrefixSizeField = value;
+			}
+		}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool privateIpv4PrefixSizeSpecified
-        {
-            get { return this.privateIpv4PrefixSizeFieldSpecified; }
-            set { this.privateIpv4PrefixSizeFieldSpecified = value; }
-        }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		public bool privateIpv4PrefixSizeSpecified
+		{
+			get
+			{
+				return this.privateIpv4PrefixSizeFieldSpecified;
+			}
+			set
+			{
+				this.privateIpv4PrefixSizeFieldSpecified = value;
+			}
+		}
 
-        /// <remarks/>
-        public string gatewayAddressing
-        {
-            get { return this.gatewayAddressingField; }
-            set { this.gatewayAddressingField = value; }
-        }
-    }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("attachedVlan", typeof(DeployVlanTypeAttachedVlan))]
+		[System.Xml.Serialization.XmlElementAttribute("detachedVlan", typeof(DeployVlanTypeDetachedVlan))]
+		public object Item
+		{
+			get
+			{
+				return this.itemField;
+			}
+			set
+			{
+				this.itemField = value;
+			}
+		}
+	}
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class DeployVlanTypeAttachedVlan
+	{
+
+		private string gatewayAddressingField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string gatewayAddressing
+		{
+			get
+			{
+				return this.gatewayAddressingField;
+			}
+			set
+			{
+				this.gatewayAddressingField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class DeployVlanTypeDetachedVlan
+	{
+
+		private string ipv4GatewayAddressField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string ipv4GatewayAddress
+		{
+			get
+			{
+				return this.ipv4GatewayAddressField;
+			}
+			set
+			{
+				this.ipv4GatewayAddressField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]

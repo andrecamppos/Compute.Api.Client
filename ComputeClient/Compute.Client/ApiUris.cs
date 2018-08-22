@@ -854,7 +854,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri DeployVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deployVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deployVlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	The relative URI for the CaaS API for editing the VLan. </summary>
