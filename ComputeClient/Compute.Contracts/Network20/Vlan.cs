@@ -83,8 +83,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private bool smallField;
 
-        /// <remarks/>
-        public VlanTypeNetworkDomain networkDomain
+		private bool attachedField;
+
+		/// <remarks/>
+		public VlanTypeNetworkDomain networkDomain
         {
             get { return this.networkDomainField; }
             set { this.networkDomainField = value; }
@@ -183,7 +185,15 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.smallField; }
             set { this.smallField = value; }
         }
-    }
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public bool attached
+		{
+			get { return this.attachedField; }
+			set { this.attachedField = value; }
+		}
+	}
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
