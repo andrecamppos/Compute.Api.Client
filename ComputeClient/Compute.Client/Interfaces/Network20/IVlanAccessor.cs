@@ -96,7 +96,7 @@
         Task<ResponseType> EditVlan(EditVlanType editVlan);
 
         /// <summary>
-        /// API operation to attach (or re-attach) a Detached VLAN.
+        /// API operation to attach (or re-attach) a Detached VLAN.   gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request. 
         /// </summary>
         /// <param name="attachVlan"></param>
         /// <returns></returns>

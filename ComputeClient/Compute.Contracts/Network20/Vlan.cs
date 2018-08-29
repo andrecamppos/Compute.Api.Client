@@ -538,6 +538,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
+    ///  gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request. 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -548,15 +549,15 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class AttachVlanType
     {
 
-        private string attachVlanField;
+        private string gatewayAddressingField;
         
         private string idField;
 
-        /// <remarks/>
-        public string attachVlan
+        /// <remarks> gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request. </remarks>
+        public string gatewayAddressing
         {
-            get { return this.attachVlanField; }
-            set { this.attachVlanField = value; }
+            get { return this.gatewayAddressingField; }
+            set { this.gatewayAddressingField = value; }
         }
         
         /// <remarks/>
