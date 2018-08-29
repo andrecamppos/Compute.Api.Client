@@ -13,18 +13,18 @@
     /// The VlanAccessor interface.
     /// </summary>
     public interface IVlanAccessor
-	{
-		/// <summary>
-		/// 	Retrieves the list of ACL rules associated with a network. This API requires your
-		/// 	organization ID and the ID of the target network.
-		/// </summary>		
-		/// <param name="options">
-		/// 	Options for controlling the operation. 
-		/// </param>
-		/// <returns>
-		/// 	The VLAN collection. 
-		/// </returns>
-		Task<IEnumerable<VlanType>> GetVlans(VlanListOptions options = null);
+    {
+        /// <summary>
+        /// 	Retrieves the list of ACL rules associated with a network. This API requires your
+        /// 	organization ID and the ID of the target network.
+        /// </summary>		
+        /// <param name="options">
+        /// 	Options for controlling the operation. 
+        /// </param>
+        /// <returns>
+        /// 	The VLAN collection. 
+        /// </returns>
+        Task<IEnumerable<VlanType>> GetVlans(VlanListOptions options = null);
 
         /// <summary>
         /// 	Retrieves the list of ACL rules associated with a network. This API requires your
@@ -62,27 +62,27 @@
         [Obsolete("Inconsistent: Use GetVlans(VlanOptions options) or GetVlans(GetVlansPaginated options, PageableRequest pagingOptions) instead.")]
         Task<IEnumerable<VlanType>> GetVlans(Guid id, string vlanName, Guid networkDomainId, PageableRequest pagingOptions = null);
 
-		/// <summary>
-		/// 	An IComputeApiClient extension method that gets a VLAN. 
-		/// </summary>
-		/// <param name="vlanId">
-		/// 	The id. 
-		/// </param>
-		/// <returns>
-		/// 	The vlan. 
-		/// </returns>
-		Task<VlanType> GetVlan(Guid vlanId);
+        /// <summary>
+        /// 	An IComputeApiClient extension method that gets a VLAN. 
+        /// </summary>
+        /// <param name="vlanId">
+        /// 	The id. 
+        /// </param>
+        /// <returns>
+        /// 	The vlan. 
+        /// </returns>
+        Task<VlanType> GetVlan(Guid vlanId);
 
-		/// <summary>
-		/// Deploys Virtual LAN on a network domain
-		/// </summary>
-		/// <param name="vlan">
-		/// Virtual LAN
-		/// </param>
-		/// <returns>
-		/// Operation status
-		/// </returns>
-		Task<ResponseType> DeployVlan(DeployVlanType vlan);
+        /// <summary>
+        /// Deploys Virtual LAN on a network domain
+        /// </summary>
+        /// <param name="vlan">
+        /// Virtual LAN
+        /// </param>
+        /// <returns>
+        /// Operation status
+        /// </returns>
+        Task<ResponseType> DeployVlan(DeployVlanType vlan);
 
         /// <summary>
         /// Edit Virtual LAN on a network domain.
@@ -94,6 +94,13 @@
         /// Operation status
         /// </returns>
         Task<ResponseType> EditVlan(EditVlanType editVlan);
+
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN.
+        /// </summary>
+        /// <param name="attachVlan"></param>
+        /// <returns></returns>
+        Task<ResponseType> AttachVlan(AttachVlanType attachVlan);
 
         /// <summary>
         /// Expand Virtual LAN on a network domain.
@@ -116,5 +123,5 @@
         /// Operation status
         /// </returns>
         Task<ResponseType> DeleteVlan(Guid id);
-	}
+    }
 }

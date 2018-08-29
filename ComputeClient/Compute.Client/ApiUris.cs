@@ -18,13 +18,13 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.7 prefix. </summary>
         public const string MCP2_7_PREFIX = "caas/2.7/";
 
-		/// <summary>	The MCP 2.8 prefix. </summary>
-		public const string MCP2_8_PREFIX = "caas/2.8/";
+        /// <summary>	The MCP 2.8 prefix. </summary>
+        public const string MCP2_8_PREFIX = "caas/2.8/";
 
-		/// <summary>
-		/// The path (relative to the base API URL) of the My Account action.
-		/// </summary>
-		public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
+        /// <summary>
+        /// The path (relative to the base API URL) of the My Account action.
+        /// </summary>
+        public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
 
         /// <summary>	Accounts the given organisation identifier. </summary>
         /// <param name="orgId">	The org Id. </param>
@@ -864,6 +864,18 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editVlan", orgId), UriKind.Relative);
         }
+
+
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN
+        /// </summary>
+        /// <param name="orgId"></param>
+        /// <returns></returns>
+        public static Uri AttachVlan(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/attachVlan", orgId), UriKind.Relative);
+        }
+
 
         /// <summary>	The relative URI for the CaaS API for expanding the VLan. </summary>
         /// <param name="orgId">	The organization ID. </param>
@@ -1961,22 +1973,22 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageDetailed?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request for OS Units Usage Report.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <param name="startDate">The Start Date</param>
-		/// <param name="endDate">The End Date</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for OS Units Usage Report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        {
+            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <param name="startDate">The Start Date</param>
-		/// <param name="endDate">The End Date</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
+        /// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageSoftwareUnits?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
@@ -2504,26 +2516,26 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri ChangeSnapshotServicePlan(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/changeSnapshotServicePlan", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ChangeSnapshotServicePlan(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/changeSnapshotServicePlan", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for Edit Snapshot Metadata.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri EditSnapshotMetadata(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/editSnapshotMetadata", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for Edit Snapshot Metadata.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri EditSnapshotMetadata(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/editSnapshotMetadata", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri DisableSnapshotService(Guid orgId)
+        /// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DisableSnapshotService(Guid orgId)
         {
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
         }
@@ -2703,7 +2715,7 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/createSslOffloadProfile", UriKind.Relative);
         }
- 
+
         /// <summary>
         /// Edit SSL Offload Profile on a Network Domain owned by the organization Id in the URL.
         /// </summary>
@@ -2745,18 +2757,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
-		/// <summary> Restore From Snapshot. </summary>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri RestoreFromSnapshot(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
-		}
+        /// <summary> Restore From Snapshot. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RestoreFromSnapshot(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
+        }
 
-		/// <summary> List Geographic Regions. </summary>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri ListGeographicRegion(Guid orgId)
+        /// <summary> List Geographic Regions. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListGeographicRegion(Guid orgId)
         {
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
         }
