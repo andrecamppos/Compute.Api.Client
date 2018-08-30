@@ -503,8 +503,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("editVlan", Namespace = "urn:didata.com:api:cloud:types",
-        IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute("editVlan", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
     public partial class EditVlanType
     {
 
@@ -538,14 +537,12 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
-    ///  gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request. 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("attachVlan", Namespace = "urn:didata.com:api:cloud:types",
-        IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute("attachVlan", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
     public partial class AttachVlanType
     {
 
