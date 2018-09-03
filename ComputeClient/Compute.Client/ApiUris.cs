@@ -187,11 +187,19 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/networkDomain", orgId), UriKind.Relative);
         }
 
-        /// <summary>The network domain.</summary>
-        /// <param name="orgId">The org id.</param>
-        /// <param name="networkDomainId">The network Domain Id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri NetworkDomain(Guid orgId, Guid networkDomainId)
+		/// <summary>The static route.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri StaticRoutes(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/staticRoute", orgId), UriKind.Relative);
+		}
+
+		/// <summary>The network domain.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <param name="networkDomainId">The network Domain Id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri NetworkDomain(Guid orgId, Guid networkDomainId)
         {
             return new Uri(
                 string.Format(MCP2_8_PREFIX + "{0}/network/networkDomain/{1}", orgId, networkDomainId),

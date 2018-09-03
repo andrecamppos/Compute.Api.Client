@@ -121,6 +121,7 @@
     <Compile Include="Network20\ServerController.cs" />
     <Compile Include="Network20\ImageControllerOverride.cs" />
     <Compile Include="Network20\ServerControllerOverride.cs" />
+    <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="Requests\Infrastructure\DataCenterListOptions.cs" />
     <Compile Include="Requests\IPageableRequest.cs" />
     <Compile Include="Requests\Drs\ConsistencyGroupListOptions.cs" />
+    <Compile Include="Requests\Network20\StaticRouteListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedIpv6ListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedPublicIpv4ListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedPrivateIpv4ListOptions.cs" />

@@ -93,5 +93,20 @@
         /// The <see cref="Task"/>.
         /// </returns>
         Task<ResponseType> DeleteNetworkDomain(Guid id);
+
+	    /// <summary>
+	    /// The get static routes.
+	    /// </summary>
+	    /// <param name="filteringOptions">
+	    /// The filtering options.
+	    /// </param>
+	    /// <param name="pagingOptions">
+	    /// The paging options.
+	    /// </param>
+	    /// <returns>
+	    /// The <see cref="Task"/>.
+	    /// </returns>
+	    Task<PagedResponse<StaticRouteType>> GetStaticRoutesPaginated(StaticRouteListOptions filteringOptions = null,
+		    PageableRequest pagingOptions = null);
 	}
 }
