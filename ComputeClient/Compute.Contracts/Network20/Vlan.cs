@@ -567,6 +567,59 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("detachVlan", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class DetachVlanType
+    {
+
+        private string gatewayAddressingField;
+
+        private string idField;
+
+        private string ipv4GatewayAddressField;
+
+        private string ipv6GatewayAddressField;
+
+        /// <remarks/>
+        public string ipv4GatewayAddress
+        {
+            get
+            {
+                return this.ipv4GatewayAddressField;
+            }
+            set
+            {
+                this.ipv4GatewayAddressField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string ipv6GatewayAddress
+        {
+            get
+            {
+                return this.ipv4GatewayAddressField;
+            }
+            set
+            {
+                this.ipv4GatewayAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
+        }
+    }
+
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]

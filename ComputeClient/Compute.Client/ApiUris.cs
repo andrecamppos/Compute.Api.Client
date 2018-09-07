@@ -876,6 +876,15 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/attachVlan", orgId), UriKind.Relative);
         }
 
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN
+        /// </summary>
+        /// <param name="orgId"></param>
+        /// <returns></returns>
+        public static Uri DetachVlan(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/detachVlan", orgId), UriKind.Relative);
+        }
 
         /// <summary>	The relative URI for the CaaS API for expanding the VLan. </summary>
         /// <param name="orgId">	The organization ID. </param>

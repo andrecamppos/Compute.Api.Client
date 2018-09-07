@@ -96,7 +96,20 @@
         Task<ResponseType> EditVlan(EditVlanType editVlan);
 
         /// <summary>
-        /// API operation to attach (or re-attach) a Detached VLAN.   gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request. 
+        /// API operation to detach an attached VLAN.   users can switch between Detached and Attached VLANs. 
+        /// Requires ipv4GatewayAddress input, ipv4GatewayAddress can be ANY valid IPv4 address(i.e.it does NOT have to be on the VLAN range) except:
+        ///           The Network Address(x.x.x.0) at the start of range of the VLAN Being Detached on the Network Domain(Q26)
+        ///           The Broadcast Address(x.x.x.255) at the end of range of VLAN Being Detached on the Network Domain
+        /// Optional ipv6GatewayAddress can be ANY valid IPv6 address(i.e.it does NOT have to be on the VLAN range) except:
+        ///           Any of the first 32 IPv6 addresses on the VLAN Being Detached for which the gateway is being submitted.
+        ///               per(Q24) answer, the last IPv6 address in the range is a valid address and can be used
+        /// </summary>
+        /// <param name="detachVlan"></param>
+        /// <returns></returns>
+        Task<ResponseType> DetachVlan(DetachVlanType detachVlan);
+
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN.   gatewayAddressing may be LOW or HIGH. Will default to LOW if not specified in request.
         /// </summary>
         /// <param name="attachVlan"></param>
         /// <returns></returns>

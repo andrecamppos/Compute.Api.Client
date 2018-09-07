@@ -158,6 +158,15 @@
             return await _api.PostAsync<AttachVlanType, ResponseType>(ApiUris.AttachVlan(_api.OrganizationId), attachVlan);
         }
 
+        /// <summary>
+        /// API operation to detach an attached VLAN.   users can switch between Detached and Attached VLANs.
+        /// </summary>
+        /// <param name="detachVlan"></param>
+        /// <returns></returns>
+        public async Task<ResponseType> DetachVlan(DetachVlanType detachVlan)
+        {
+            return await _api.PostAsync<DetachVlanType, ResponseType>(ApiUris.DetachVlan(_api.OrganizationId), detachVlan);
+        }
 
         /// <summary>
         /// Expand Virtual LAN on a network domain.
