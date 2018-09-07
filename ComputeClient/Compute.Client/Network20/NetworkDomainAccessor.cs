@@ -71,16 +71,41 @@
             };
         }
 
-        /// <summary>
-        /// 	This function gets a network domain from Cloud.
-        /// </summary>
-        /// <param name="networkDomainId">
-        /// 	Network domain id. 
-        /// </param>
-        /// <returns>
-        /// 	The network domain with the supplied id. 
-        /// </returns>
-        public async Task<NetworkDomainType> GetNetworkDomain(Guid networkDomainId)
+		/// <summary>
+		/// The get static routes.
+		/// </summary>
+		/// <param name="filteringOptions">
+		/// The filtering options.
+		/// </param>
+		/// <param name="pagingOptions">
+		/// The paging options.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<PagedResponse<StaticRouteType>> GetStaticRoutesPaginated(StaticRouteListOptions filteringOptions = null, PageableRequest pagingOptions = null)
+		{
+			var response = await _apiClient.GetAsync<staticRoutes>(ApiUris.StaticRoutes(_apiClient.OrganizationId), pagingOptions, filteringOptions);
+			return new PagedResponse<StaticRouteType>
+			{
+				items = response.staticRoute,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
+
+		/// <summary>
+		/// 	This function gets a network domain from Cloud.
+		/// </summary>
+		/// <param name="networkDomainId">
+		/// 	Network domain id. 
+		/// </param>
+		/// <returns>
+		/// 	The network domain with the supplied id. 
+		/// </returns>
+		public async Task<NetworkDomainType> GetNetworkDomain(Guid networkDomainId)
         {
             return await _apiClient.GetAsync<NetworkDomainType>(
                 ApiUris.NetworkDomain(_apiClient.OrganizationId, networkDomainId));
