@@ -108,5 +108,16 @@
 	    /// </returns>
 	    Task<PagedResponse<StaticRouteType>> GetStaticRoutesPaginated(StaticRouteListOptions filteringOptions = null,
 		    PageableRequest pagingOptions = null);
+
+	    /// <summary>
+	    /// This function create a new custom static route.
+	    /// </summary>
+	    /// <param name="networkDomain">
+	    /// The network Domain.
+	    /// </param>
+	    /// <returns>
+	    /// Response containing status.
+	    /// </returns>
+	    Task<ResponseType> CreateStaticRoute(CreateStaticRouteType networkDomain);
 	}
 }

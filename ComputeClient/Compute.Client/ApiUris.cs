@@ -195,6 +195,14 @@ namespace DD.CBU.Compute.Api.Client
 			return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/staticRoute", orgId), UriKind.Relative);
 		}
 
+		/// <summary>Create static route.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CreateStaticRoute(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createStaticRoute", orgId), UriKind.Relative);
+		}
+
 		/// <summary>The network domain.</summary>
 		/// <param name="orgId">The org id.</param>
 		/// <param name="networkDomainId">The network Domain Id.</param>
