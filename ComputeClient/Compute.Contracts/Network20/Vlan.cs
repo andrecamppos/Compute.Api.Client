@@ -600,7 +600,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get
             {
-                return this.ipv6GatewayAddressField;
+                return string.IsNullOrEmpty(this.ipv6GatewayAddressField)? null : this.ipv6GatewayAddressField;
             }
             set
             {
