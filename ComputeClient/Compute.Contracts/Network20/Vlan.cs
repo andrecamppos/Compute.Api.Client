@@ -576,8 +576,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DetachVlanType
     {
 
-        private string gatewayAddressingField;
-
         private string idField;
 
         private string ipv4GatewayAddressField;
@@ -602,11 +600,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get
             {
-                return this.ipv4GatewayAddressField;
+                return this.ipv6GatewayAddressField;
             }
             set
             {
-                this.ipv4GatewayAddressField = value;
+                this.ipv6GatewayAddressField = value;
             }
         }
         
