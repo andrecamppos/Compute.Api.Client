@@ -117,6 +117,7 @@
     <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
     <Compile Include="Image20\OvfPackages.cs" />
+    <Compile Include="Network20\CreateStaticRouteType.cs" />
     <Compile Include="Network20\PortList.cs" />
     <Compile Include="Network20\ServerController.cs" />
     <Compile Include="Network20\ImageControllerOverride.cs" />

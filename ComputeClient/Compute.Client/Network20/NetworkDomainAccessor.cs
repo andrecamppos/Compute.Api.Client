@@ -97,6 +97,22 @@
 		}
 
 		/// <summary>
+		/// This function create a new custom static route.
+		/// </summary>
+		/// <param name="networkDomain">
+		/// The network Domain.
+		/// </param>
+		/// <returns>
+		/// Response containing status.
+		/// </returns>
+		public async Task<ResponseType> CreateStaticRoute(CreateStaticRouteType networkDomain)
+		{
+			return await _apiClient.PostAsync<CreateStaticRouteType, ResponseType>(
+				ApiUris.CreateStaticRoute(_apiClient.OrganizationId),
+				networkDomain);
+		}
+
+		/// <summary>
 		/// 	This function gets a network domain from Cloud.
 		/// </summary>
 		/// <param name="networkDomainId">
