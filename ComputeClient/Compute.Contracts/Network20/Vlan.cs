@@ -513,6 +513,36 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string idField;
 
+        private string ipv4GatewayAddressField;
+
+        private string ipv6GatewayAddressField;
+
+        /// <remarks> xs:element name="ipv6GatewayAddress" type="xs:string" minOccurs="0" nillable="true" </remarks> 
+        public string ipv6GatewayAddress
+        {
+            get
+            {
+                return string.IsNullOrEmpty(this.ipv6GatewayAddressField) ? null : this.ipv6GatewayAddressField;
+            }
+            set
+            {
+                this.ipv6GatewayAddressField = value;
+            }
+        }
+
+        /// <remarks> xs:element name="ipv4GatewayAddress" type="xs:string" minOccurs="0" </remarks>
+        public string ipv4GatewayAddress
+        {
+            get
+            {
+                return string.IsNullOrEmpty(this.ipv4GatewayAddressField) ? null : this.ipv4GatewayAddressField;
+            }
+            set
+            {
+                this.ipv4GatewayAddressField = value;
+            }
+        }
+
         /// <remarks/>
         public string name
         {
