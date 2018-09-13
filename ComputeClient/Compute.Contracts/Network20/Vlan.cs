@@ -507,27 +507,28 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class EditVlanType
     {
 
+        private string idField;
+
         private string nameField;
 
         private string descriptionField;
 
-        private string idField;
-
         private string ipv4GatewayAddressField;
 
         private string ipv6GatewayAddressField;
-
-        /// <remarks> xs:element name="ipv6GatewayAddress" type="xs:string" minOccurs="0" nillable="true" </remarks> 
-        public string ipv6GatewayAddress
+        
+        /// <remarks/>
+        public string name
         {
-            get
-            {
-                return string.IsNullOrEmpty(this.ipv6GatewayAddressField) ? null : this.ipv6GatewayAddressField;
-            }
-            set
-            {
-                this.ipv6GatewayAddressField = value;
-            }
+            get { return this.nameField; }
+            set { this.nameField = value; }
+        }
+
+        /// <remarks/>
+        public string description
+        {
+            get { return this.descriptionField; }
+            set { this.descriptionField = value; }
         }
 
         /// <remarks> xs:element name="ipv4GatewayAddress" type="xs:string" minOccurs="0" </remarks>
@@ -543,18 +544,17 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             }
         }
 
-        /// <remarks/>
-        public string name
+        /// <remarks> xs:element name="ipv6GatewayAddress" type="xs:string" minOccurs="0" nillable="true" </remarks> 
+        public string ipv6GatewayAddress
         {
-            get { return this.nameField; }
-            set { this.nameField = value; }
-        }
-
-        /// <remarks/>
-        public string description
-        {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
+            get
+            {
+                return string.IsNullOrEmpty(this.ipv6GatewayAddressField) ? null : this.ipv6GatewayAddressField;
+            }
+            set
+            {
+                this.ipv6GatewayAddressField = value;
+            }
         }
 
         /// <remarks/>
