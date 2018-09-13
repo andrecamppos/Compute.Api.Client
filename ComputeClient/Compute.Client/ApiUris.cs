@@ -878,7 +878,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri EditVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editVlan", orgId), UriKind.Relative);
         }
 
 
