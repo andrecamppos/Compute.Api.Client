@@ -907,7 +907,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri ExpandVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/expandVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/expandVlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the vlan described by orgId. </summary>
