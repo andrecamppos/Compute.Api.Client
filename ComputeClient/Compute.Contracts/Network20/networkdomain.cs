@@ -55,7 +55,16 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private string idField;
 
         private string datacenterIdField;
-        
+
+        private bool baselineStaticRouteConfigurationField;
+
+        /// <remarks/>
+        public bool baselineStaticRouteConfiguration
+        {
+            get { return this.baselineStaticRouteConfigurationField; }
+            set { this.baselineStaticRouteConfigurationField = value; }
+        }
+
         /// <remarks/>
         public string name
         {
