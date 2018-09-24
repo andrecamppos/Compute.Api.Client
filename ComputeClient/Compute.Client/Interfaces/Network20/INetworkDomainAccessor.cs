@@ -131,5 +131,16 @@
         /// </returns>
         Task<ResponseType> DeleteStaticRoute(Guid staticRouteId);
 
+
+        /// <summary>
+        /// This function Restores Static Routes to System Static Route Values (erases all current routes).
+        /// </summary>
+        /// <param name="networkDomainId">
+        /// The network domain ID.
+        /// </param>
+        /// <returns>
+        /// Response containing status.
+        /// </returns>
+        Task<ResponseType> RestoreStaticRoute(Guid networkDomainId);
     }
 }

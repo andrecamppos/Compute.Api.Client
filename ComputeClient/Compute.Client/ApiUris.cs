@@ -211,6 +211,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteStaticRoute", orgId), UriKind.Relative);
         }
 
+        /// <summary>Restores Static Routes to System Static Route Values (erases all current routes).</summary>
+        /// <param name="orgId">The org id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RestoreStaticRoute(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/restoreStaticRoutes", orgId), UriKind.Relative);
+        }
+
         /// <summary>The network domain.</summary>
         /// <param name="orgId">The org id.</param>
         /// <param name="networkDomainId">The network Domain Id.</param>

@@ -129,6 +129,22 @@
         }
 
         /// <summary>
+        /// This function Restores Static Routes to System Static Route Values (erases all current routes).
+        /// </summary>
+        /// <param name="networkDomainId">
+        /// The network domain ID.
+        /// </param>
+        /// <returns>
+        /// Response containing status.
+        /// </returns>
+        public async Task<ResponseType> RestoreStaticRoute(Guid networkDomainId)
+        {
+            return await _apiClient.PostAsync<RestoreStaticRouteType, ResponseType>(
+                ApiUris.RestoreStaticRoute(_apiClient.OrganizationId),
+                new RestoreStaticRouteType { networkDomainId = networkDomainId.ToString() });
+        }
+
+        /// <summary>
         /// 	This function gets a network domain from Cloud.
         /// </summary>
         /// <param name="networkDomainId">

@@ -446,4 +446,27 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.idField = value; }
         }
     }
+
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("restoreStaticRoutes", Namespace = "urn:didata.com:api:cloud:types",
+        IsNullable = false)]
+    public partial class RestoreStaticRouteType
+    {
+
+        private string networkDomainIdField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string networkDomainId
+        {
+            get { return this.networkDomainIdField; }
+            set { this.networkDomainIdField = value; }
+        }
+    }
 }
