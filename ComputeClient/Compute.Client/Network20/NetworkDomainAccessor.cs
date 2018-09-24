@@ -112,16 +112,32 @@
 				networkDomain);
 		}
 
-		/// <summary>
-		/// 	This function gets a network domain from Cloud.
+        /// <summary>
+		/// This function deletes an existing static route.
 		/// </summary>
-		/// <param name="networkDomainId">
-		/// 	Network domain id. 
+		/// <param name="staticRouteId">
+		/// The static route ID.
 		/// </param>
 		/// <returns>
-		/// 	The network domain with the supplied id. 
+		/// Response containing status.
 		/// </returns>
-		public async Task<NetworkDomainType> GetNetworkDomain(Guid networkDomainId)
+		public async Task<ResponseType> DeleteStaticRoute(Guid staticRouteId)
+        {
+            return await _apiClient.PostAsync<DeleteStaticRouteType, ResponseType>(
+                ApiUris.DeleteStaticRoute(_apiClient.OrganizationId),
+                new DeleteStaticRouteType { id = staticRouteId.ToString() });
+        }
+
+        /// <summary>
+        /// 	This function gets a network domain from Cloud.
+        /// </summary>
+        /// <param name="networkDomainId">
+        /// 	Network domain id. 
+        /// </param>
+        /// <returns>
+        /// 	The network domain with the supplied id. 
+        /// </returns>
+        public async Task<NetworkDomainType> GetNetworkDomain(Guid networkDomainId)
         {
             return await _apiClient.GetAsync<NetworkDomainType>(
                 ApiUris.NetworkDomain(_apiClient.OrganizationId, networkDomainId));

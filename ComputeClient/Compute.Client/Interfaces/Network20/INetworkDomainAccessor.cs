@@ -119,5 +119,17 @@
 	    /// Response containing status.
 	    /// </returns>
 	    Task<ResponseType> CreateStaticRoute(CreateStaticRouteType networkDomain);
-	}
+
+        /// <summary>
+        /// Delete the static route. 
+        /// </summary>
+        /// <param name="staticRouteId">
+        /// The identifier of the static route. 
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<ResponseType> DeleteStaticRoute(Guid staticRouteId);
+
+    }
 }

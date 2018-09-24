@@ -424,4 +424,26 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.idField = value; }
         }
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("deleteStaticRoute", Namespace = "urn:didata.com:api:cloud:types",
+        IsNullable = false)]
+    public partial class DeleteStaticRouteType
+    {
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get { return this.idField; }
+            set { this.idField = value; }
+        }
+    }
 }
