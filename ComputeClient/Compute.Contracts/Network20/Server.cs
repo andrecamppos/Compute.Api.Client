@@ -1146,8 +1146,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         public string ipv4Gateway;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("disk")]
+		/// <remarks/>
+		public string ipv6Gateway;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("disk")]
         public DeployServerTypeDisk[] disk;
 
         /// <remarks/>
