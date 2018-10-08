@@ -32,6 +32,23 @@ namespace Compute.Client.UnitTests.Server20
         }
 
         [TestMethod]
+		public async Task ListServers_ReturnsResponse()
+		{
+			requestsAndResponses.Add(ApiUris.MyAccount,RequestFileResponseType.AsGoodResponse("GetMyAccountDetails.xml"));
+			requestsAndResponses.Add(ApiUris.ListServers(accountId), RequestFileResponseType.AsGoodResponse("ListServersResponse.xml"));
+
+            var client = GetWebApiClient();
+            var accessor = new ServerAccessor(client);
+            var servers = await accessor.ListServers();
+
+            Assert.IsNotNull(servers);
+			Assert.AreEqual(23, servers.Count());
+			Assert.AreEqual("c4e80cb1-e819-4dbf-97aa-020a7f1d9fd3", servers.First().id);
+            Assert.AreEqual("QA1_N1_VMWARE_1", servers.First().datacenterId);
+        }
+
+
+        [TestMethod]
 		public async Task GetServer_ReturnsResponse()
 		{
 			Guid serverId = new Guid("0fad8eeb-83d7-4703-b450-171c33a79682");
