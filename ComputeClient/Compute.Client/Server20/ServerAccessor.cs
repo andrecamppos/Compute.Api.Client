@@ -457,12 +457,21 @@ namespace DD.CBU.Compute.Api.Client.Server20
 			return await _apiClient.PostAsync<SetNicConnectivityType, ResponseType>(ApiUris.SetNicConnectivity(_apiClient.OrganizationId), setNicConnectivityType);
 		}
 
-		/// <summary>
-		/// Enable snapshot service
-		/// </summary>
-		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
-		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
+
+        /// <summary>Set or unset scripts to be run before and/or after a Server Snapshot is taken.</summary>
+        /// <param name="editSnapshotServiceScriptsType">Edit Snapshot Service Scripts Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> EditSnapshotServiceScripts(EditSnapshotServiceScriptsType editSnapshotServiceScriptsType)
+        {
+            return await _apiClient.PostAsync<EditSnapshotServiceScriptsType, ResponseType>(ApiUris.EditSnapshotServiceScripts(_apiClient.OrganizationId), editSnapshotServiceScriptsType);
+        }
+
+        /// <summary>
+        /// Enable snapshot service
+        /// </summary>
+        /// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
 		{
 			return await _apiClient.PostAsync<EnableSnapshotServiceType, ResponseType>(ApiUris.EnableSnapshotService(_apiClient.OrganizationId), enableSnapshotServiceType);
 		}

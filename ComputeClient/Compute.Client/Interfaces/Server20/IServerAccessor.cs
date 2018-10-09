@@ -215,12 +215,19 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="setNicConnectivityType">Nic Connectivity Type.</param>
 		Task<ResponseType> SetNicConnectivity(SetNicConnectivityType setNicConnectivityType);
 
-		/// <summary>
-		/// Enable snapshot service
+        /// <summary>
+		/// Set or unset scripts to be run before and/or after a Server Snapshot is taken.
 		/// </summary>
-		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+		/// <param name="editSnapshotServiceScriptsType">Edit Snapshot Service Scripts Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType);
+		Task<ResponseType> EditSnapshotServiceScripts(EditSnapshotServiceScriptsType editSnapshotServiceScriptsType);
+
+        /// <summary>
+        /// Enable snapshot service
+        /// </summary>
+        /// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType);
 
 		/// <summary>
 		/// Disable snapshot service

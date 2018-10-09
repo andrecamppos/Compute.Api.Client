@@ -2570,6 +2570,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/editSnapshotMetadata", orgId), UriKind.Relative);
         }
 
+        /// <summary>Set or unset scripts to be run before and/or after a Server Snapshot is taken.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri EditSnapshotServiceScripts(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/editSnapshotServiceScripts", orgId), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <returns>The <see cref="Uri"/>.</returns>
