@@ -2867,5 +2867,22 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_8_PREFIX}{orgId}/infrastructure/osUnitsGroup/{osUnitsGroupId}", UriKind.Relative);
         }
+
+        /// <summary>Returns the relative URI of the REST request for list servers.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListServers(Guid orgId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for getting the server details.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="serverId">The server id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetServerDetails(Guid orgId, Guid serverId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
+        }
     }
 }
