@@ -125,6 +125,7 @@
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />

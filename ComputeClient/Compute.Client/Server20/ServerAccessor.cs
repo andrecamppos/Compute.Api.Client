@@ -399,6 +399,14 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
         }
 
+        /// <summary>The move server to cluster.</summary>
+        /// <param name="copyServer">The copy server.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> CopyServer(CopyServerType copyServer)
+        {
+            return await _apiClient.PostAsync<CopyServerType, ResponseType>(ApiUris.CopyServer(_apiClient.OrganizationId), copyServer);
+        }
+
         /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
         /// <param name="serverDetails">Details of the server to be deployed</param>
         /// <returns>Response containing the server id</returns>

@@ -174,6 +174,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <returns>The async type of <see cref="ResponseType"/></returns>
 		Task<ResponseType> MoveServer(MoveServerType moveServer);
 
+	    /// <summary>The move server to cluster.</summary>
+	    /// <param name="copyServer">The copy server.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> CopyServer(CopyServerType copyServer);
+
 		/// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
 		/// <param name="serverDetails">Details of the server to be deployed</param>
 		/// <returns>Response containing the server id</returns>

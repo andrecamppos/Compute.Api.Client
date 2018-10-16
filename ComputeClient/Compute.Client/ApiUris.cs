@@ -1991,6 +1991,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/moveServer", orgId), UriKind.Relative);
         }
 
+        /// <summary>Copy Server to MCP2 Datacenter </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for move server to cluster api. </returns>
+        public static Uri CopyServer(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/copyServer", orgId), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for usage summary.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <param name="startDate">The Start Date</param>
