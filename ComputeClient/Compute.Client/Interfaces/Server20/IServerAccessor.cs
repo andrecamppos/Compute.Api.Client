@@ -29,11 +29,22 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<IEnumerable<ServerType>> GetServers(ServerListOptions filteringOptions = null);
 
+	    /// <summary>The get mcp 2 deployed servers.</summary>
+	    /// <param name="filteringOptions">The filtering options.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<IEnumerable<ServerSummaryType>> ListServers(ServerListOptions filteringOptions = null);
+
 		/// <summary>The get mcp 2 deployed servers.</summary>
 		/// <param name="filteringOptions">The filtering options.</param>
 		/// <param name="pagingOptions">The paging options.</param>
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<PagedResponse<ServerType>> GetServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+        
+        /// <summary>The get mcp 2 deployed servers.</summary>
+		/// <param name="filteringOptions">The filtering options.</param>
+		/// <param name="pagingOptions">The paging options.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		Task<PagedResponse<ServerSummaryType>> ListServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
 
 		/// <summary>The get mcp 2 deployed server.</summary>
 		/// <param name="serverId">The server id.</param>
@@ -45,6 +56,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="serverId">The server id.</param>
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<ServerType> GetServer(Guid serverId);
+
+	    /// <summary>The get mcp 2 deployed server.</summary>
+	    /// <param name="serverId">The server id.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ServerDetailType> GetServerDetails(Guid serverId);
 
 		/// <summary>	Deletes the server described by serverId. </summary>
 		/// <param name="serverId">	The server id. </param>
