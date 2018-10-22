@@ -117,11 +117,15 @@
     <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
     <Compile Include="Image20\OvfPackages.cs" />
+    <Compile Include="Network20\CreateStaticRouteType.cs" />
     <Compile Include="Network20\PortList.cs" />
+    <Compile Include="Network20\ServerBaseType.cs" />
     <Compile Include="Network20\ServerController.cs" />
     <Compile Include="Network20\ImageControllerOverride.cs" />
     <Compile Include="Network20\ServerControllerOverride.cs" />
+    <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
@@ -245,6 +249,7 @@
     <Compile Include="Requests\Infrastructure\DataCenterListOptions.cs" />
     <Compile Include="Requests\IPageableRequest.cs" />
     <Compile Include="Requests\Drs\ConsistencyGroupListOptions.cs" />
+    <Compile Include="Requests\Network20\StaticRouteListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedIpv6ListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedPublicIpv4ListOptions.cs" />
     <Compile Include="Requests\Network20\ReservedPrivateIpv4ListOptions.cs" />
@@ -301,6 +306,7 @@
     <Compile Include="Server\DiskSpeedType.cs" />
     <Compile Include="Server\DiskType.cs" />
     <Compile Include="Server\DiskWithSpeedType.cs" />
+    <Compile Include="Server\EditSnapshotServiceScriptsType.cs" />
     <Compile Include="Server\ExpandDiskType.cs" />
     <Compile Include="Server\ChangeSnapshotServicePlanType.cs" />
     <Compile Include="Server\MachineSpecificationType.cs" />

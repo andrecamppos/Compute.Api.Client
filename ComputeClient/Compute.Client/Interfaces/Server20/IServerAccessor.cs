@@ -29,11 +29,22 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<IEnumerable<ServerType>> GetServers(ServerListOptions filteringOptions = null);
 
+	    /// <summary>The get mcp 2 deployed servers.</summary>
+	    /// <param name="filteringOptions">The filtering options.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<IEnumerable<ServerSummaryType>> ListServers(ServerListOptions filteringOptions = null);
+
 		/// <summary>The get mcp 2 deployed servers.</summary>
 		/// <param name="filteringOptions">The filtering options.</param>
 		/// <param name="pagingOptions">The paging options.</param>
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<PagedResponse<ServerType>> GetServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+        
+        /// <summary>The get mcp 2 deployed servers.</summary>
+		/// <param name="filteringOptions">The filtering options.</param>
+		/// <param name="pagingOptions">The paging options.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		Task<PagedResponse<ServerSummaryType>> ListServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
 
 		/// <summary>The get mcp 2 deployed server.</summary>
 		/// <param name="serverId">The server id.</param>
@@ -45,6 +56,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="serverId">The server id.</param>
 		/// <returns>The <see cref="Task"/>.</returns>
 		Task<ServerType> GetServer(Guid serverId);
+
+	    /// <summary>The get mcp 2 deployed server.</summary>
+	    /// <param name="serverId">The server id.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ServerDetailType> GetServerDetails(Guid serverId);
 
 		/// <summary>	Deletes the server described by serverId. </summary>
 		/// <param name="serverId">	The server id. </param>
@@ -158,6 +174,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <returns>The async type of <see cref="ResponseType"/></returns>
 		Task<ResponseType> MoveServer(MoveServerType moveServer);
 
+	    /// <summary>The move server to cluster.</summary>
+	    /// <param name="copyServer">The copy server.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> CopyServer(CopyServerType copyServer);
+
 		/// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
 		/// <param name="serverDetails">Details of the server to be deployed</param>
 		/// <returns>Response containing the server id</returns>
@@ -215,12 +236,19 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="setNicConnectivityType">Nic Connectivity Type.</param>
 		Task<ResponseType> SetNicConnectivity(SetNicConnectivityType setNicConnectivityType);
 
-		/// <summary>
-		/// Enable snapshot service
+        /// <summary>
+		/// Set or unset scripts to be run before and/or after a Server Snapshot is taken.
 		/// </summary>
-		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+		/// <param name="editSnapshotServiceScriptsType">Edit Snapshot Service Scripts Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType);
+		Task<ResponseType> EditSnapshotServiceScripts(EditSnapshotServiceScriptsType editSnapshotServiceScriptsType);
+
+        /// <summary>
+        /// Enable snapshot service
+        /// </summary>
+        /// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType);
 
 		/// <summary>
 		/// Disable snapshot service

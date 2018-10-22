@@ -18,4 +18,4 @@ using System.Reflection;
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("3.7.21")]
 [assembly: AssemblyFileVersion("3.7.21")]
-[assembly: AssemblyInformationalVersion("3.7.21-dev")]
+[assembly: AssemblyInformationalVersion("3.7.21")]

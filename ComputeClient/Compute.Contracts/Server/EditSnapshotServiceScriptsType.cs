@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace DD.CBU.Compute.Api.Contracts.Network20
 {
     using System.Xml.Serialization;
@@ -22,91 +23,56 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("enableSnapshotService", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-    public partial class EnableSnapshotServiceType
+    public partial class EmptyType
+    {
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("editSnapshotServiceScripts", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class EditSnapshotServiceScriptsType
     {
 
-        private string servicePlanField;
+        private EditSnapshotServiceScriptsTypePreSnapshot preSnapshotField;
 
-        private string windowIdField;
+        private EditSnapshotServiceScriptsTypePostSnapshot postSnapshotField;
 
-        private bool initiateManualSnapshotField;
-
-        private EnableSnapshotServiceTypePreSnapshotScript preSnapshotScriptField;
-
-        private EnableSnapshotServiceTypePostSnapshotScript postSnapshotScriptField;
-
-        private EnableSnapshotServiceTypeServerCredentials serverCredentialsField;
+        private EditSnapshotServiceScriptsTypeServerCredentials serverCredentialsField;
 
         private string serverIdField;
 
         /// <remarks/>
-        public string servicePlan
+        public EditSnapshotServiceScriptsTypePreSnapshot preSnapshot
         {
             get
             {
-                return this.servicePlanField;
+                return this.preSnapshotField;
             }
             set
             {
-                this.servicePlanField = value;
+                this.preSnapshotField = value;
             }
         }
 
         /// <remarks/>
-        public string windowId
+        public EditSnapshotServiceScriptsTypePostSnapshot postSnapshot
         {
             get
             {
-                return this.windowIdField;
+                return this.postSnapshotField;
             }
             set
             {
-                this.windowIdField = value;
+                this.postSnapshotField = value;
             }
         }
 
         /// <remarks/>
-        public bool initiateManualSnapshot
-        {
-            get
-            {
-                return this.initiateManualSnapshotField;
-            }
-            set
-            {
-                this.initiateManualSnapshotField = value;
-            }
-        }
-
-        /// <remarks/>
-        public EnableSnapshotServiceTypePreSnapshotScript preSnapshotScript
-        {
-            get
-            {
-                return this.preSnapshotScriptField;
-            }
-            set
-            {
-                this.preSnapshotScriptField = value;
-            }
-        }
-
-        /// <remarks/>
-        public EnableSnapshotServiceTypePostSnapshotScript postSnapshotScript
-        {
-            get
-            {
-                return this.postSnapshotScriptField;
-            }
-            set
-            {
-                this.postSnapshotScriptField = value;
-            }
-        }
-
-        /// <remarks/>
-        public EnableSnapshotServiceTypeServerCredentials serverCredentials
+        public EditSnapshotServiceScriptsTypeServerCredentials serverCredentials
         {
             get
             {
@@ -139,7 +105,34 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class EnableSnapshotServiceTypePreSnapshotScript
+    public partial class EditSnapshotServiceScriptsTypePreSnapshot
+    {
+
+        private object itemField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("noScript", typeof(EmptyType))]
+        [System.Xml.Serialization.XmlElementAttribute("script", typeof(EditSnapshotServiceScriptsTypePreSnapshotScript))]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class EditSnapshotServiceScriptsTypePreSnapshotScript
     {
 
         private string pathField;
@@ -166,6 +159,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public string description
         {
             get
@@ -227,7 +221,34 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class EnableSnapshotServiceTypePostSnapshotScript
+    public partial class EditSnapshotServiceScriptsTypePostSnapshot
+    {
+
+        private object itemField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("noScript", typeof(EmptyType))]
+        [System.Xml.Serialization.XmlElementAttribute("script", typeof(EditSnapshotServiceScriptsTypePostSnapshotScript))]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class EditSnapshotServiceScriptsTypePostSnapshotScript
     {
 
         private string pathField;
@@ -248,6 +269,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public string description
         {
             get
@@ -267,7 +289,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class EnableSnapshotServiceTypeServerCredentials
+    public partial class EditSnapshotServiceScriptsTypeServerCredentials
     {
 
         private string usernameField;

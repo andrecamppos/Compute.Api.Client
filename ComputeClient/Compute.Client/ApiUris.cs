@@ -15,8 +15,8 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 1.0 prefix. </summary>
         public const string MCP1_0_PREFIX = "oec/0.9/";
 
-        /// <summary>	The MCP 2.7 prefix. </summary>
-        public const string MCP2_7_PREFIX = "caas/2.7/";
+        /// <summary>	The MCP 2.8 prefix. </summary>
+        public const string MCP2_8_PREFIX = "caas/2.8/";
 
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
@@ -44,7 +44,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri CreateUser(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/user/createUser", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/user/createUser", orgId), UriKind.Relative);
         }
 
         /// <summary>	Edit user action.</summary>
@@ -52,7 +52,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri EditUser(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/user/editUser", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/user/editUser", orgId), UriKind.Relative);
         }
 
         /// <summary>	Set user roles action.</summary>
@@ -60,7 +60,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri SetUserRoles(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/user/setUserRoles", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/user/setUserRoles", orgId), UriKind.Relative);
         }
 
         /// <summary>	Change password action.</summary>
@@ -68,7 +68,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri ChangeUserPassword(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/user/changeUserPassword", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/user/changeUserPassword", orgId), UriKind.Relative);
         }
 
         /// <summary>	Delete user action.</summary>
@@ -76,7 +76,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri DeleteUser(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/user/deleteUser", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/user/deleteUser", orgId), UriKind.Relative);
         }
 
         /// <summary>The path (relative to the base API URL) to update My Account action.</summary>
@@ -112,7 +112,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateSnapShotPreviewServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/createSnapshotPreviewServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/createSnapshotPreviewServer", orgId), UriKind.Relative);
         }
 
         /// <summary>The path (relative to the base API URL) to Migrate Snapshot Preview Server.</summary>
@@ -120,7 +120,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri MigrateSnapShotPreviewServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/migrateSnapshotPreviewServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/migrateSnapshotPreviewServer", orgId), UriKind.Relative);
         }
 
         /// <summary>The path (relative to the base API URL) delete sub administrator action.</summary>
@@ -181,7 +181,39 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri NetworkDomains(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/networkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/networkDomain", orgId), UriKind.Relative);
+        }
+
+		/// <summary>The static route.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri StaticRoutes(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/staticRoute", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Create static route.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CreateStaticRoute(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createStaticRoute", orgId), UriKind.Relative);
+		}
+
+        /// <summary>Delte static route.</summary>
+        /// <param name="orgId">The org id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DeleteStaticRoute(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteStaticRoute", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Restores Static Routes to System Static Route Values (erases all current routes).</summary>
+        /// <param name="orgId">The org id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RestoreStaticRoute(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/restoreStaticRoutes", orgId), UriKind.Relative);
         }
 
         /// <summary>The network domain.</summary>
@@ -191,7 +223,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri NetworkDomain(Guid orgId, Guid networkDomainId)
         {
             return new Uri(
-                string.Format(MCP2_7_PREFIX + "{0}/network/networkDomain/{1}", orgId, networkDomainId),
+                string.Format(MCP2_8_PREFIX + "{0}/network/networkDomain/{1}", orgId, networkDomainId),
                 UriKind.Relative);
         }
 
@@ -202,7 +234,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri AddNic(Guid orgId)
         {
             return new Uri(
-                String.Format(MCP2_7_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
+                String.Format(MCP2_8_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
         }
 
         /// <summary>	Exchange Nic Vlans </summary>
@@ -212,7 +244,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri ExchangeNicVlans(Guid orgId)
         {
             return new Uri(
-                String.Format(MCP2_7_PREFIX + "{0}/server/exchangeNicVlans", orgId), UriKind.Relative);
+                String.Format(MCP2_8_PREFIX + "{0}/server/exchangeNicVlans", orgId), UriKind.Relative);
         }
 
         /// <summary>	Removes a NIC from a server </summary>
@@ -220,7 +252,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri RemoveNic(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/removeNic", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/removeNic", orgId), UriKind.Relative);
         }
 
 
@@ -230,7 +262,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri ListNics(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/nic?vlanId={1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/nic?vlanId={1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for Notify NIC IP change.</summary>
@@ -238,7 +270,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri NotifyNicIpChange(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/notifyNicIpChange", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/notifyNicIpChange", orgId), UriKind.Relative);
         }
 
         /// <summary>	Get the URI for creating a network domain. </summary>
@@ -246,7 +278,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri CreateNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deployNetworkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deployNetworkDomain", orgId), UriKind.Relative);
         }
 
         /// <summary>The modify network domain.</summary>
@@ -254,7 +286,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ModifyNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editNetworkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editNetworkDomain", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the network domain described by orgId. </summary>
@@ -262,7 +294,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri DeleteNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deleteNetworkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteNetworkDomain", orgId), UriKind.Relative);
         }
 
         /// <summary>Deploy server on network domains url.</summary>
@@ -270,7 +302,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeployServerOnNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Get the relative URI for the CaaS API action that retrieves a list of all data centres available for use by the specified organisation.</summary>
@@ -278,7 +310,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The relative action Uri.</returns>
         public static Uri DataCentres(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/datacenter", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/infrastructure/datacenter", orgId), UriKind.Relative);
         }
 
         /// <summary>Get the relative URI for the CaaS API action that retrieves a list of all data centres available for use by the specified organisation.</summary>
@@ -388,7 +420,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri CleanCustomerImage(Guid orgId)
         {
             return new Uri(
-                string.Format(MCP2_7_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
+                string.Format(MCP2_8_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that deletes a customer image.</summary>
@@ -397,7 +429,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri DeleteCustomerImage(Guid orgId)
         {
             return new Uri(
-                string.Format(MCP2_7_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
+                string.Format(MCP2_8_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that copies customer source image.</summary>
@@ -413,7 +445,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CopyCustomerImage(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/copyImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/copyImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
@@ -501,7 +533,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for a Edit server metadata</returns>
         public static Uri EditServerMetadata(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/editServerMetadata", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/editServerMetadata", orgId), UriKind.Relative);
         }
 
         /// <summary>Deletes the server.
@@ -698,7 +730,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Servers(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets server snapshots windows. </summary>
@@ -709,7 +741,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetSnapshotWindow(Guid orgId, string datacenterId, string servicePlan)
         {
-            return new Uri((MCP2_7_PREFIX + $"{orgId}/infrastructure/snapshotWindow?datacenterId={datacenterId}&servicePlan={servicePlan}"), UriKind.Relative);
+            return new Uri((MCP2_8_PREFIX + $"{orgId}/infrastructure/snapshotWindow?datacenterId={datacenterId}&servicePlan={servicePlan}"), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 server. </summary>
@@ -719,7 +751,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -727,7 +759,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRules(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/antiAffinityRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/antiAffinityRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -736,7 +768,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForServer(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/antiAffinityRule?serverId={1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/antiAffinityRule?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -745,7 +777,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForNetwork(Guid orgId, Guid networkId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/antiAffinityRule?networkId={1}", orgId, networkId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/antiAffinityRule?networkId={1}", orgId, networkId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -754,7 +786,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetMcp2GetAntiAffinityRulesForNetworkDomain(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/antiAffinityRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/antiAffinityRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         #region FirewallRule
@@ -764,7 +796,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetFirewallRules(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/firewallRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/firewallRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the get firewall rule URL.</summary>
@@ -773,7 +805,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri GetFirewallRule(Guid orgId, Guid firewallRuleId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/firewallRule/{1}", orgId, firewallRuleId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/firewallRule/{1}", orgId, firewallRuleId), UriKind.Relative);
         }
 
         /// <summary>Gets the create firewall rule URL.</summary>
@@ -781,7 +813,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri CreateFirewallRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/createFirewallRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createFirewallRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the edit firewall rule URL.</summary>
@@ -789,7 +821,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri EditFirewallRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editFirewallRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editFirewallRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the delete firewall rule URL.</summary>
@@ -797,7 +829,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL.</returns>
         public static Uri DeleteFirewallRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deleteFirewallRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteFirewallRule", orgId), UriKind.Relative);
         }
 
         #endregion
@@ -826,7 +858,7 @@ namespace DD.CBU.Compute.Api.Client
                 queryParameters.Add(string.Format("networkDomainId={0}", networkDomainId));
             }
 
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/vlan?{1}", orgId, String.Join("&", queryParameters)), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/vlan?{1}", orgId, String.Join("&", queryParameters)), UriKind.Relative);
         }
 
         /// <summary>	The get Virtual LAN. </summary>
@@ -835,7 +867,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri GetVlan(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/vlan/{1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/vlan/{1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>	Gets vlan by organisation identifier. </summary>
@@ -843,7 +875,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The vlan by organisation identifier. </returns>
         public static Uri GetVlanByOrgId(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/vlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/vlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	The relative URI for the CaaS API for deploying the VLan. </summary>
@@ -851,7 +883,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri DeployVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deployVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deployVlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	The relative URI for the CaaS API for editing the VLan. </summary>
@@ -859,7 +891,28 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri EditVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editVlan", orgId), UriKind.Relative);
+        }
+
+
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN
+        /// </summary>
+        /// <param name="orgId"></param>
+        /// <returns></returns>
+        public static Uri AttachVlan(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/attachVlan", orgId), UriKind.Relative);
+        }
+
+        /// <summary>
+        /// API operation to attach (or re-attach) a Detached VLAN
+        /// </summary>
+        /// <param name="orgId"></param>
+        /// <returns></returns>
+        public static Uri DetachVlan(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/detachVlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	The relative URI for the CaaS API for expanding the VLan. </summary>
@@ -867,7 +920,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	A URI. </returns>
         public static Uri ExpandVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/expandVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/expandVlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the vlan described by orgId. </summary>
@@ -875,7 +928,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri DeleteVlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deleteVlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteVlan", orgId), UriKind.Relative);
         }
 
         #endregion
@@ -1273,7 +1326,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URI for the API.</returns>
         public static Uri GetCustomerImageExportHistory(Guid organizationId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/exportHistory", organizationId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/exportHistory", organizationId), UriKind.Relative);
         }
 
         #endregion
@@ -1285,7 +1338,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for importing a MCP 2.0 customer image</returns>
         public static Uri ImportMcp2CustomerImage(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/importImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/importImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that POST a request to export a MCP 2.0 customer image</summary>
@@ -1293,7 +1346,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for exporting a MCP 2.0 customer image</returns>
         public static Uri ExportMcp2CustomerImage(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/exportImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/exportImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that retrieves a MCP 2.0 list of OVF Packages</summary>
@@ -1301,7 +1354,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for getting the OVF Packages</returns>
         public static Uri GetMcp2OvfPackage(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/ovfPackage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/ovfPackage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the status of Customer Image Exports that a particular ogranization has  in progress</summary>
@@ -1309,7 +1362,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for getting the Customer Image Exports in progress</returns>
         public static Uri GetMcp2CustomerImageExportsInProgress(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/exportInProgress", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/exportInProgress", orgId), UriKind.Relative);
         }
         #endregion
 
@@ -1506,7 +1559,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri EnableServerMonitoring(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/enableServerMonitoring", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/enableServerMonitoring", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the URL to change the server monitoring plan</summary>
@@ -1514,7 +1567,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri ChangeServerMonitoringPlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/changeServerMonitoringPlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/changeServerMonitoringPlan", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the URL to disable server monitoring</summary>
@@ -1522,7 +1575,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri DisableServerMonitoring(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/disableServerMonitoring", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/disableServerMonitoring", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the URL to retrieve server monitoring usage report</summary>
@@ -1532,7 +1585,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri GetMonitoringUsageReport(Guid orgId, DateTime startDate, DateTime? endDate)
         {
-            var url = string.Format(MCP2_7_PREFIX + "{0}/report/usageMonitoring?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
+            var url = string.Format(MCP2_8_PREFIX + "{0}/report/usageMonitoring?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
 
             if (endDate.HasValue)
             {
@@ -1549,7 +1602,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri AddPublicIpBlock(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/addPublicIpBlock", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/addPublicIpBlock", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets public IP blocks. </summary>
@@ -1559,7 +1612,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The public IP blocks. </returns>
         public static Uri GetPublicIpBlocks(Guid orgId, string networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/publicIpBlock?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/publicIpBlock?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>	Gets public IP block. </summary>
@@ -1568,7 +1621,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The public IP block. </returns>
         public static Uri GetPublicIpBlock(Guid orgId, string publicIpBlockId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/publicIpBlock/{1}", orgId, publicIpBlockId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/publicIpBlock/{1}", orgId, publicIpBlockId), UriKind.Relative);
         }
 
         /// <summary>	Gets reserved public addresses. </summary>
@@ -1577,7 +1630,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The reserved public addresses. </returns>
         public static Uri GetReservedPublicAddresses(Guid orgId, string networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedPublicIpv4Address?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedPublicIpv4Address?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>	Gets reserved public addresses for network. </summary>
@@ -1586,7 +1639,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The reserved public addresses for network. </returns>
         public static Uri GetReservedPublicAddressesForNetwork(Guid orgId, string networkId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedPublicIpv4Address?networkId={1}", orgId, networkId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedPublicIpv4Address?networkId={1}", orgId, networkId), UriKind.Relative);
         }
 
         /// <summary>	Gets reserved private addresses. </summary>
@@ -1595,7 +1648,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The reserved public addresses. </returns>
         public static Uri GetReservedPrivateAddresses(Guid orgId, string vlanId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedPrivateIpv4Address?vlanId={1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedPrivateIpv4Address?vlanId={1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>	Gets reserved private addresses. </summary>
@@ -1604,7 +1657,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The reserved public addresses. </returns>
         public static Uri GetReservedPrivateAddressesForNetwork(Guid orgId, string networkId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedPrivateIpv4Address?networkId={1}", orgId, networkId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedPrivateIpv4Address?networkId={1}", orgId, networkId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the server. </summary>
@@ -1612,7 +1665,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Returns the relative URI of the REST request for a deletion of the server. </returns>
         public static Uri DeleteServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/deleteServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/deleteServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Starts a server. </summary>
@@ -1620,7 +1673,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri StartServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/startServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/startServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Resets the server (hard reset). </summary>
@@ -1628,7 +1681,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri ResetServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/resetServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/resetServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	A "graceful" reboot of the server. </summary>
@@ -1636,7 +1689,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Returns the relative URI of the REST request for rebooting the server. </returns>
         public static Uri RebootServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/rebootServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/rebootServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	A “graceful” stop of a server by initiating a shutdown sequence within the guest
@@ -1645,7 +1698,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Returns the relative URI of the REST request for a graceful shutdown of the server.</returns>
         public static Uri ShutdownServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/shutdownServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/shutdownServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Power off server. </summary>
@@ -1653,7 +1706,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri PowerOffServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/powerOffServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/powerOffServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Updates the vmware tools described by orgId. </summary>
@@ -1661,7 +1714,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri UpdateVmwareTools(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/updateVmwareTools", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/updateVmwareTools", orgId), UriKind.Relative);
         }
 
         /// <summary>	upgrade virtual hardware for the server. </summary>
@@ -1669,7 +1722,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI. </returns>
         public static Uri UpgradeVirtualHardware(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/upgradeVirtualHardware", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/upgradeVirtualHardware", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets all the NAT rules for a specified network.</summary>
@@ -1678,7 +1731,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for getting the NAT rules</returns>
         public static Uri GetDomainNatRules(Guid orgId, string networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/natRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/natRule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>Deletes a NAT Rule. </summary>
@@ -1687,7 +1740,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for getting the NAT rule.</returns>
         public static Uri GetNatRule(Guid orgId, string natRuleId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/natRule/{1}", orgId, natRuleId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/natRule/{1}", orgId, natRuleId), UriKind.Relative);
         }
 
         /// <summary>Creates a NAT Rule on a Network Domain in an MCP 2.0 data center location.</summary>
@@ -1695,7 +1748,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for creating the NAT rule.</returns>
         public static Uri CreateNatRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/createNatRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createNatRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Deletes a NAT Rule. </summary>
@@ -1703,7 +1756,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>Returns the relative URI of the REST request for deleting the NAT rule.</returns>
         public static Uri DeleteNatRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deleteNatRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteNatRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for creating the Pool.</summary>
@@ -1711,7 +1764,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreatePool(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/createPool", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/createPool", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Pools.</summary>
@@ -1719,7 +1772,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetPools(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/pool", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/pool", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Single Pool details.</summary>
@@ -1728,7 +1781,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetPool(Guid orgId, Guid poolId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/pool/{1}", orgId, poolId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/pool/{1}", orgId, poolId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for updating the Pool.</summary>
@@ -1736,7 +1789,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditPool(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/editPool", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/editPool", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for deleting the Pool.</summary>
@@ -1744,7 +1797,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeletePool(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/deletePool", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/deletePool", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for creating the Pool Member.</summary>
@@ -1752,7 +1805,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri AddPoolMember(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/addPoolMember", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/addPoolMember", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Pool Members.</summary>
@@ -1760,7 +1813,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetPoolMembers(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/poolMember", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/poolMember", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Single Pool Member details.</summary>
@@ -1769,7 +1822,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetPoolMember(Guid orgId, Guid poolMemberId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/poolMember/{1}", orgId, poolMemberId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/poolMember/{1}", orgId, poolMemberId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for updating the Pool Member.</summary>
@@ -1777,7 +1830,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditPoolMember(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/editPoolMember", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/editPoolMember", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for deleting the Pool Member.</summary>
@@ -1785,7 +1838,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeletePoolMember(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/removePoolMember", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/removePoolMember", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for creating the VIP Node.</summary>
@@ -1793,7 +1846,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri AddVipNode(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/createNode", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/createNode", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the VIP Nodes.</summary>
@@ -1801,7 +1854,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetVipNodes(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/node", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/node", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Single VIP Node details.</summary>
@@ -1810,7 +1863,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetVipNode(Guid orgId, Guid vipNodeId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/node/{1}", orgId, vipNodeId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/node/{1}", orgId, vipNodeId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for updating the VIP Node.</summary>
@@ -1818,7 +1871,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditVipNode(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/editNode", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/editNode", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for deleting the VIP Node.</summary>
@@ -1826,7 +1879,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteVipNode(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/deleteNode", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/deleteNode", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for creating the Virtual Listener.</summary>
@@ -1834,7 +1887,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateVirtualListener(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/createVirtualListener", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/createVirtualListener", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Virtual Listeners.</summary>
@@ -1842,7 +1895,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetVirtualListeners(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/virtualListener", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/virtualListener", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the Single Virtual Listener details.</summary>
@@ -1851,7 +1904,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetVirtualListener(Guid orgId, Guid virtualListenerId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/virtualListener/{1}", orgId, virtualListenerId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/virtualListener/{1}", orgId, virtualListenerId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for updating the Virtual Listener.</summary>
@@ -1859,7 +1912,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditVirtualListener(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/editVirtualListener", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/editVirtualListener", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for deleting the Virtual Listener.</summary>
@@ -1867,7 +1920,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteVirtualListener(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/deleteVirtualListener", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/deleteVirtualListener", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the get default health monitor URL.</summary>
@@ -1876,7 +1929,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetDefaultHealthMonitors(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/defaultHealthMonitor?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/defaultHealthMonitor?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>Returns the get default persistence profile URL.</summary>
@@ -1885,7 +1938,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetDefaultPersistenceProfile(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/defaultPersistenceProfile?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/defaultPersistenceProfile?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>Returns the get default iRule URL.</summary>
@@ -1894,7 +1947,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetDefaultIrule(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/networkDomainVip/defaultIrule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/networkDomainVip/defaultIrule?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for notify private IP address change.</summary>
@@ -1911,7 +1964,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemovePublicIpv4AddressBlock(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/removePublicIpBlock", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/removePublicIpBlock", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deploy server via MCP 2.0 api </summary>
@@ -1919,7 +1972,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for the mcp2.0 deploy server api. </returns>
         public static Uri DeployMCP20Server(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/deployServer", orgId), UriKind.Relative);
         }
 
         /// <summary>	Clean server via MCP 2.0 api </summary>
@@ -1927,7 +1980,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for the mcp2.0 clean server api. </returns>
         public static Uri CleanServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/cleanServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/cleanServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Move Server to Cluster </summary>
@@ -1935,7 +1988,15 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for move server to cluster api. </returns>
         public static Uri MoveServerToCluster(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/moveServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/moveServer", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Copy Server to MCP2 Datacenter </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for move server to cluster api. </returns>
+        public static Uri CopyServer(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/copyServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for usage summary.</summary>
@@ -1958,22 +2019,22 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageDetailed?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request for OS Units Usage Report.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <param name="startDate">The Start Date</param>
-		/// <param name="endDate">The End Date</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for OS Units Usage Report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <param name="startDate">The Start Date</param>
-		/// <param name="endDate">The End Date</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
+        /// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageSoftwareUnits?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
@@ -2006,7 +2067,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DrsPairsUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/report/usageDrsSourceServers?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/report/usageDrsSourceServers?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 os images. </summary>
@@ -2014,7 +2075,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2OsImages(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/osImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/osImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 os images. </summary>
@@ -2023,7 +2084,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2OsImage(Guid orgId, Guid imageId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/osImage/{1}", orgId, imageId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/osImage/{1}", orgId, imageId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 customer images. </summary>
@@ -2031,7 +2092,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImages(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 customer image. </summary>
@@ -2040,7 +2101,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImage(Guid orgId, Guid imageId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
         }
 
         /// <summary>	Edit MCP 2 customer image metadata </summary>
@@ -2048,7 +2109,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri EditMcp2CustomerImageMetadata(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
         }
 
         /// <summary>Move Customer Image to Cluster </summary>
@@ -2056,7 +2117,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for move customer image to cluster api. </returns>
         public static Uri MoveCustomerImageToCluster(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/image/moveCustomerImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/image/moveCustomerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Get MCP 2 operating systems</summary>
@@ -2065,7 +2126,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri GetMcp2OperatingSystems(Guid orgId)
         {
             return
-                new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/operatingSystem", orgId), UriKind.Relative);
+                new Uri(string.Format(MCP2_8_PREFIX + "{0}/infrastructure/operatingSystem", orgId), UriKind.Relative);
         }
 
         /// <summary>	Create security group</summary>
@@ -2073,7 +2134,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri CreateSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/createSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/createSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Edit security group</summary>
@@ -2081,7 +2142,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri EditSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/editSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/editSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Delete security group</summary>
@@ -2089,7 +2150,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri DeleteSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/deleteSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/deleteSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Add nic to security group</summary>
@@ -2097,7 +2158,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri AddNicToSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/addNicToSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/addNicToSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Add server to security group</summary>
@@ -2105,7 +2166,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri AddServerToSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Add server to security group</summary>
@@ -2113,7 +2174,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri RemoveServerFromSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/removeServerFromSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/removeServerFromSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Remove Nic from security group</summary>
@@ -2121,7 +2182,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri RemoveNicFromSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/removeNicFromSecurityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/removeNicFromSecurityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>	Get security group</summary>
@@ -2130,7 +2191,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetSecurityGroupForVlan(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/securityGroup?vlanId={1}", orgId, vlanId),
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/securityGroup?vlanId={1}", orgId, vlanId),
                 UriKind.Relative);
         }
 
@@ -2140,7 +2201,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetSecurityGroupForServer(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/securityGroup?serverId={1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/securityGroup?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>	Get security group</summary>
@@ -2148,7 +2209,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetSecurityGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/securityGroup/securityGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/securityGroup/securityGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for reconfiguring the server.</summary>
@@ -2156,7 +2217,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ReconfigureServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/reconfigureServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/reconfigureServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Retrieves a list of compatible target Servers for an Out of Place given a specific deployed Server and Backup Client Type as input.</summary>
@@ -2184,7 +2245,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateIpAddressList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/createIpAddressList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createIpAddressList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for list ip address list.</summary>
@@ -2193,7 +2254,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListIpAddressList(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/ipAddressList?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/ipAddressList?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
 
@@ -2203,7 +2264,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetIpAddressList(Guid orgId, Guid ipAddressListId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/ipAddressList/{1}", orgId, ipAddressListId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/ipAddressList/{1}", orgId, ipAddressListId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for edit ip address list.</summary>
@@ -2211,7 +2272,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditIpAddressList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editIpAddressList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editIpAddressList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete ip address list.</summary>
@@ -2219,7 +2280,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteIpAddressList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deleteIpAddressList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deleteIpAddressList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create port list.</summary>
@@ -2227,7 +2288,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreatePortList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/createPortList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/createPortList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for list port list.</summary>
@@ -2236,7 +2297,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListPortList(Guid orgId, Guid networkDomainId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/portList?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/portList?networkDomainId={1}", orgId, networkDomainId), UriKind.Relative);
         }
 
 
@@ -2246,7 +2307,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetPortList(Guid orgId, Guid portListId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/portList/{1}", orgId, portListId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/portList/{1}", orgId, portListId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for edit port list.</summary>
@@ -2254,7 +2315,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditPortList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editPortList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editPortList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete port list.</summary>
@@ -2262,7 +2323,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeletePortList(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deletePortList", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deletePortList", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for adding disk to server.</summary>
@@ -2270,7 +2331,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri AddDisk(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/addDisk", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/addDisk", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for removing disk from server.</summary>
@@ -2278,7 +2339,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveDisk(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/removeDisk", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/removeDisk", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for reserving private ip v4 address.</summary>
@@ -2286,7 +2347,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ReservePrivateIpv4Address(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservePrivateIpv4Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservePrivateIpv4Address", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for unreserving private ip v4 address.</summary>
@@ -2294,7 +2355,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri UnreservePrivateIpv4Address(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/unreservePrivateIpv4Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/unreservePrivateIpv4Address", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for reserving ip v6 address.</summary>
@@ -2302,7 +2363,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ReserveIpv6Address(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reserveIpv6Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reserveIpv6Address", orgId), UriKind.Relative);
         }
 
         /// <summary>The get reserved ipv 6 addresses.</summary>
@@ -2310,7 +2371,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetReservedIpv6Addresses(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedIpv6Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedIpv6Address", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for unreserving ip v6 address.</summary>
@@ -2318,7 +2379,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri UnreserveIpv6Address(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/unreserveIpv6Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/unreserveIpv6Address", orgId), UriKind.Relative);
         }
 
         /// <summary>The get reserved private ipv 4 addresses.</summary>
@@ -2326,7 +2387,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetReservedPrivateIpv4Addresses(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/reservedPrivateIpv4Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/reservedPrivateIpv4Address", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create tag key.</summary>
@@ -2334,7 +2395,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/createTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/createTagKey", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for list tag key.</summary>
@@ -2342,7 +2403,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListTagKeys(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/tagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/tagKey", orgId), UriKind.Relative);
         }
 
 
@@ -2352,7 +2413,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetTagKey(Guid orgId, Guid tagKeyId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/tagKey/{1}", orgId, tagKeyId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/tagKey/{1}", orgId, tagKeyId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for edit tag key.</summary>
@@ -2360,7 +2421,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EditTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/editTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/editTagKey", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete tag key.</summary>
@@ -2368,7 +2429,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteTagKey(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/deleteTagKey", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/deleteTagKey", orgId), UriKind.Relative);
         }
 
 
@@ -2377,7 +2438,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ApplyTags(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/applyTags", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/applyTags", orgId), UriKind.Relative);
         }
 
         /// <summary>The get tags.</summary>
@@ -2385,7 +2446,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetTags(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/tag", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/tag", orgId), UriKind.Relative);
         }
 
         /// <summary>The remove tag.</summary>
@@ -2393,7 +2454,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveTag(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/tag/removeTags", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/tag/removeTags", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency groups.</summary>
@@ -2401,7 +2462,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroups(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency group.</summary>
@@ -2410,7 +2471,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroup(Guid orgId, Guid id)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create consistency groups.</summary>
@@ -2418,7 +2479,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateConsistencyGroups(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/createConsistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/createConsistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency group snapshots.</summary>
@@ -2426,7 +2487,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroupSnapshots(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/snapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/snapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for stop preview snapshot of a consistency group.</summary>
@@ -2434,7 +2495,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri StopPreviewSnapshot(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/stopPreviewSnapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/stopPreviewSnapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for start preview snapshot of a consistency group.</summary>
@@ -2442,7 +2503,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri StartPreviewSnapshot(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/startPreviewSnapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/startPreviewSnapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete consistency group.</summary>
@@ -2450,7 +2511,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// <returns>The <see cref="Uri"/>.</returns>
 		public static Uri DeleteConsistencyGroup(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/deleteConsistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/deleteConsistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for initiate failover for a consistency group.</summary>
@@ -2458,7 +2519,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri InitiateFailover(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/initiateFailover", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/initiateFailover", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for expand journal.</summary>
@@ -2466,7 +2527,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ExpandJournal(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/consistencyGroup/expandJournal", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/expandJournal", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deploy the uncustomized server via MCP 2.0 api </summary>
@@ -2474,7 +2535,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for the mcp2.0 deploy server api. </returns>
         public static Uri DeployUncustomizedServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/deployUncustomizedServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/deployUncustomizedServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for clone server.</summary>
@@ -2482,7 +2543,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CloneServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for set nic connectivity.</summary>
@@ -2490,7 +2551,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri SetNicConnectivity(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for enable snapshot service.</summary>
@@ -2498,31 +2559,39 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EnableSnapshotService(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri ChangeSnapshotServicePlan(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/changeSnapshotServicePlan", orgId), UriKind.Relative);
-		}
-
-		/// <summary>Returns the relative URI of the REST request for Edit Snapshot Metadata.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri EditSnapshotMetadata(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/editSnapshotMetadata", orgId), UriKind.Relative);
-		}
-
-		/// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri DisableSnapshotService(Guid orgId)
+        /// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ChangeSnapshotServicePlan(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/changeSnapshotServicePlan", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for Edit Snapshot Metadata.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri EditSnapshotMetadata(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/editSnapshotMetadata", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Set or unset scripts to be run before and/or after a Server Snapshot is taken.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri EditSnapshotServiceScripts(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/editSnapshotServiceScripts", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DisableSnapshotService(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request to initiate manual snapshot.</summary>
@@ -2530,7 +2599,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri InitiateManualSnapshot(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request to delete manual snapshot.</summary>
@@ -2538,7 +2607,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteManualSnapshot(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/deleteManualSnapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/deleteManualSnapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
@@ -2546,7 +2615,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
         public static Uri ChangeNicNetworkAdapter(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create Anti-Affinity rule.</summary>
@@ -2554,7 +2623,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateMcp2AntiAffinityRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/createAntiAffinityRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/createAntiAffinityRule", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for delete Anti-Affinity rule.</summary>
@@ -2562,7 +2631,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DeleteMcp2AntiAffinityRule(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/deleteAntiAffinityRule", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/deleteAntiAffinityRule", orgId), UriKind.Relative);
         }
 
         /// <summary>
@@ -2578,7 +2647,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri GetMyUser()
         {
-            return new Uri($"{MCP2_7_PREFIX}/user/myUser", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/user/myUser", UriKind.Relative);
         }
 
         /// <summary>
@@ -2586,7 +2655,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri GetUser(Guid orgId, string userName)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/user/user/{userName}", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/user/user/{userName}", UriKind.Relative);
         }
 
         /// <summary>
@@ -2594,7 +2663,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ListUsers(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/user/user", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/user/user", UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for adding scsi controller.</summary>
@@ -2602,7 +2671,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri AddScsiController(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/addScsiController", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/addScsiController", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for removing scsi controller.</summary>
@@ -2610,7 +2679,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveScsiController(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/removeScsiController", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/removeScsiController", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for removing ISO file.</summary>
@@ -2618,7 +2687,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveIsoFile(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/removeIsoFile", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/removeIsoFile", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for removing Flp file.</summary>
@@ -2626,7 +2695,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RemoveFlpFile(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/server/removeFlpFile", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/removeFlpFile", orgId), UriKind.Relative);
         }
 
         /// <summary>
@@ -2634,7 +2703,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri GetSslDomainCertificate(Guid orgId, Guid sslDomainCertificateId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate/{sslDomainCertificateId}", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate/{sslDomainCertificateId}", UriKind.Relative);
         }
 
         /// <summary>
@@ -2642,7 +2711,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ListSslDomainCertificates(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate", UriKind.Relative);
         }
 
         /// <summary>
@@ -2650,7 +2719,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri GetSslCertificateChain(Guid orgId, Guid sslCertificateChainId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain/{sslCertificateChainId}", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain/{sslCertificateChainId}", UriKind.Relative);
         }
 
         /// <summary>
@@ -2658,7 +2727,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ListSslCertificateChains(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain", UriKind.Relative);
         }
 
         /// <summary>
@@ -2666,7 +2735,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri GetSslSslOffloadProfile(Guid orgId, Guid sslOffloadProfileId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile/{sslOffloadProfileId}", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile/{sslOffloadProfileId}", UriKind.Relative);
         }
 
         /// <summary>
@@ -2674,7 +2743,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ListSslOffloadProfile(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile", UriKind.Relative);
         }
 
         /// <summary>
@@ -2682,7 +2751,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ImportSslDomainCertificate(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/importSslDomainCertificate", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/importSslDomainCertificate", UriKind.Relative);
         }
 
         /// <summary>
@@ -2690,7 +2759,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri ImportSslCertificateChain(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/importSslCertificateChain", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/importSslCertificateChain", UriKind.Relative);
         }
 
         /// <summary>
@@ -2698,15 +2767,15 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri CreateSslOffloadProfile(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/createSslOffloadProfile", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/createSslOffloadProfile", UriKind.Relative);
         }
- 
+
         /// <summary>
         /// Edit SSL Offload Profile on a Network Domain owned by the organization Id in the URL.
         /// </summary>
         public static Uri EditSslOffloadProfile(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/editSslOffloadProfile", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/editSslOffloadProfile", UriKind.Relative);
         }
 
         /// <summary>
@@ -2714,7 +2783,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri DeleteSslDomainCertificate(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/deleteSslDomainCertificate", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/deleteSslDomainCertificate", UriKind.Relative);
         }
 
         /// <summary>
@@ -2722,7 +2791,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri DeleteSslCertificateChain(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/deleteSslCertificateChain", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/deleteSslCertificateChain", UriKind.Relative);
         }
 
         /// <summary>
@@ -2730,7 +2799,7 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public static Uri DeleteSslOffloadProfile(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}/{orgId}/networkDomainVip/deleteSslOffloadProfile", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/networkDomainVip/deleteSslOffloadProfile", UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 servers. </summary>
@@ -2739,23 +2808,23 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListSnapshots(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
-		/// <summary> Restore From Snapshot. </summary>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri RestoreFromSnapshot(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
-		}
-
-		/// <summary> List Geographic Regions. </summary>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri ListGeographicRegion(Guid orgId)
+        /// <summary> Restore From Snapshot. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RestoreFromSnapshot(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
+        }
+
+        /// <summary> List Geographic Regions. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListGeographicRegion(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for two factor authentication status.</summary>
@@ -2763,7 +2832,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri SetTwoFactorAuthenication(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/organization/setTwoFactorAuthentication", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/organization/setTwoFactorAuthentication", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for change disk iops.</summary>
@@ -2771,7 +2840,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ChangeDiskIops(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}{orgId}/server/changeDiskIops", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}{orgId}/server/changeDiskIops", UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for change disk size.</summary>
@@ -2779,7 +2848,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ExpandDiskSize(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}{orgId}/server/expandDisk", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}{orgId}/server/expandDisk", UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for change disk speed with iops.</summary>
@@ -2787,7 +2856,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ChangeDikSpeed(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}{orgId}/server/changeDiskSpeed", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}{orgId}/server/changeDiskSpeed", UriKind.Relative);
         }
 
         /// <summary>	List Os Units groups</summary>
@@ -2795,7 +2864,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri ListOsUnitsGroup(Guid orgId)
         {
-            return new Uri($"{MCP2_7_PREFIX}{orgId}/infrastructure/osUnitsGroup", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}{orgId}/infrastructure/osUnitsGroup", UriKind.Relative);
         }
 
         /// <summary>	Get Os Units group</summary> 
@@ -2804,7 +2873,24 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetOsUnitsGroup(Guid orgId, string osUnitsGroupId)
         {
-            return new Uri($"{MCP2_7_PREFIX}{orgId}/infrastructure/osUnitsGroup/{osUnitsGroupId}", UriKind.Relative);
+            return new Uri($"{MCP2_8_PREFIX}{orgId}/infrastructure/osUnitsGroup/{osUnitsGroupId}", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for list servers.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListServers(Guid orgId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for getting the server details.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="serverId">The server id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetServerDetails(Guid orgId, Guid serverId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
         }
     }
 }
