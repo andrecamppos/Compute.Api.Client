@@ -399,6 +399,14 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
         }
 
+        /// <summary>The move server to cluster.</summary>
+        /// <param name="copyServer">The copy server.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> CopyServer(CopyServerType copyServer)
+        {
+            return await _apiClient.PostAsync<CopyServerType, ResponseType>(ApiUris.CopyServer(_apiClient.OrganizationId), copyServer);
+        }
+
         /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>
         /// <param name="serverDetails">Details of the server to be deployed</param>
         /// <returns>Response containing the server id</returns>
@@ -495,12 +503,21 @@ namespace DD.CBU.Compute.Api.Client.Server20
 			return await _apiClient.PostAsync<SetNicConnectivityType, ResponseType>(ApiUris.SetNicConnectivity(_apiClient.OrganizationId), setNicConnectivityType);
 		}
 
-		/// <summary>
-		/// Enable snapshot service
-		/// </summary>
-		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
-		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
+
+        /// <summary>Set or unset scripts to be run before and/or after a Server Snapshot is taken.</summary>
+        /// <param name="editSnapshotServiceScriptsType">Edit Snapshot Service Scripts Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> EditSnapshotServiceScripts(EditSnapshotServiceScriptsType editSnapshotServiceScriptsType)
+        {
+            return await _apiClient.PostAsync<EditSnapshotServiceScriptsType, ResponseType>(ApiUris.EditSnapshotServiceScripts(_apiClient.OrganizationId), editSnapshotServiceScriptsType);
+        }
+
+        /// <summary>
+        /// Enable snapshot service
+        /// </summary>
+        /// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
 		{
 			return await _apiClient.PostAsync<EnableSnapshotServiceType, ResponseType>(ApiUris.EnableSnapshotService(_apiClient.OrganizationId), enableSnapshotServiceType);
 		}

@@ -125,6 +125,7 @@
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
@@ -305,6 +306,7 @@
     <Compile Include="Server\DiskSpeedType.cs" />
     <Compile Include="Server\DiskType.cs" />
     <Compile Include="Server\DiskWithSpeedType.cs" />
+    <Compile Include="Server\EditSnapshotServiceScriptsType.cs" />
     <Compile Include="Server\ExpandDiskType.cs" />
     <Compile Include="Server\ChangeSnapshotServicePlanType.cs" />
     <Compile Include="Server\MachineSpecificationType.cs" />
