@@ -98,5 +98,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// <param name="osUnitsGroupId">The OS units group id</param>
         /// <returns>Geo Regions</returns>
         Task<OsUnitsGroupType> GetOsUnitsGroup(string osUnitsGroupId);
+
+        /// <summary>
+        /// The Get Organization
+        /// </summary>
+        /// <returns>Geo Regions</returns>
+        Task<organization> GetOrganization();
     }
 }

@@ -112,6 +112,7 @@
     <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Image20\CleanCustomerImageIdType.cs" />
     <Compile Include="Infrastructure\GeographicRegionType.cs" />
+    <Compile Include="Infrastructure\Organization.cs" />
     <Compile Include="Infrastructure\OsUnitsGroupType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\ImageController.cs" />

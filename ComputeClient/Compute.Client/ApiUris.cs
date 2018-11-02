@@ -18,6 +18,9 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.8 prefix. </summary>
         public const string MCP2_8_PREFIX = "caas/2.8/";
 
+        /// <summary>	The MCP 2.9 prefix. </summary>
+        public const string MCP2_9_PREFIX = "caas/2.9/";
+
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
         /// </summary>
@@ -2891,6 +2894,14 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri GetServerDetails(Guid orgId, Guid serverId)
         {
             return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for getting the organization details.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetOrganization(Guid orgId)
+        {
+            return new Uri($"{MCP2_9_PREFIX}/{orgId}/organization/organization", UriKind.Relative);
         }
     }
 }
