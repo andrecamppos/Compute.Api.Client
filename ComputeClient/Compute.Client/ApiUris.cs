@@ -2903,5 +2903,13 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_9_PREFIX}/{orgId}/organization/organization", UriKind.Relative);
         }
+
+        /// <summary>Returns the relative URI of the REST request for setting the VPN access.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SetVpnAccess(Guid orgId)
+        {
+            return new Uri($"{MCP2_9_PREFIX}/{orgId}/organization/setVpnAccess", UriKind.Relative);
+        }
     }
 }

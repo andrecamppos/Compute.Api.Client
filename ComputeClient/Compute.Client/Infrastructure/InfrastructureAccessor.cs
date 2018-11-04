@@ -198,14 +198,5 @@
         {
             return await _apiClient.GetAsync<OsUnitsGroupType>(ApiUris.GetOsUnitsGroup(_apiClient.OrganizationId, osUnitsGroupId));
         }
-
-        /// <summary>
-        /// The Get Organization
-        /// </summary>
-        /// <returns>Geo Regions</returns>
-        public async Task<organization> GetOrganization()
-        {
-            return await _apiClient.GetAsync<organization>(ApiUris.GetOrganization(_apiClient.OrganizationId));
-        }
     }
 }

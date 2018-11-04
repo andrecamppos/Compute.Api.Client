@@ -49,6 +49,7 @@ namespace DD.CBU.Compute.Api.Client
     using DD.CBU.Compute.Api.Contracts.Software;
 	using Drs;
 	using Interfaces.Drs;
+	using Interfaces.Organization;
 	using Interfaces.Tagging;
 	using Tagging;
 
@@ -212,6 +213,7 @@ namespace DD.CBU.Compute.Api.Client
             ConsistencyGroups = new ConsistencyGroupAccessor(WebApi);
 		    Ssl = new SslAccessor(WebApi);
 		    Snapshot = new SnapshotAccessor(WebApi);
+            Organization = new OrganizationAccessor(WebApi);
 		}
 
 		#endregion
@@ -385,6 +387,11 @@ namespace DD.CBU.Compute.Api.Client
         /// Gets the Snapshot Accessor.
         /// </summary>
         public ISnapshotAccessor Snapshot { get; private set; }
+
+        /// <summary>
+        /// Gets the Organization Accessor.
+        /// </summary>
+        public IOrganizationAccessor Organization { get; private set; }
 
         #endregion Instance data
 
