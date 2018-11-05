@@ -25,6 +25,7 @@
     public partial class setVpnAccess
     {
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()] public string vpnAccess;
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string vpnAccess;
     }
 }
