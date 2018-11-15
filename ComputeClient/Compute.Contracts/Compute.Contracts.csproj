@@ -112,6 +112,7 @@
     <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Image20\CleanCustomerImageIdType.cs" />
     <Compile Include="Infrastructure\GeographicRegionType.cs" />
+    <Compile Include="Network20\SnatExclusion.cs" />
     <Compile Include="Organization\Organization.cs" />
     <Compile Include="Infrastructure\OsUnitsGroupType.cs" />
     <Compile Include="Organization\SetVpnAccess.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Requests\Network20\SnatExclusionListOptions.cs" />
     <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />

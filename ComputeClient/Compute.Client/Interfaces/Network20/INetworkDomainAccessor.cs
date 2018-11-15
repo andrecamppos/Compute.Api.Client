@@ -142,5 +142,21 @@
         /// Response containing status.
         /// </returns>
         Task<ResponseType> RestoreStaticRoute(Guid networkDomainId);
-    }
+
+	    /// <summary>
+	    /// The get snat exclusions.
+	    /// </summary>
+	    /// <param name="filteringOptions">
+	    /// The filtering options.
+	    /// </param>
+	    /// <param name="pagingOptions">
+	    /// The paging options.
+	    /// </param>
+	    /// <returns>
+	    /// The <see cref="Task"/>.
+	    /// </returns>
+	    Task<PagedResponse<SnatExclusionType>> GetSnatExclusionsPaginated(
+		    SnatExclusionListOptions filteringOptions = null, PageableRequest pagingOptions = null);
+
+	}
 }

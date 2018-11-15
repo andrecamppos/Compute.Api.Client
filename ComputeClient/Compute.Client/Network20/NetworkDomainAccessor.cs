@@ -223,5 +223,30 @@
 			    ApiUris.DeleteNetworkDomain(_apiClient.OrganizationId),
                 new DeleteNetworkDomainType { id = id.ToString() });
 		}
+
+		/// <summary>
+		/// The get snat exclusions.
+		/// </summary>
+		/// <param name="filteringOptions">
+		/// The filtering options.
+		/// </param>
+		/// <param name="pagingOptions">
+		/// The paging options.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<PagedResponse<SnatExclusionType>> GetSnatExclusionsPaginated(SnatExclusionListOptions filteringOptions = null, PageableRequest pagingOptions = null)
+		{
+			var response = await _apiClient.GetAsync<snatExclusions>(ApiUris.SnatExclusions(_apiClient.OrganizationId), pagingOptions, filteringOptions);
+			return new PagedResponse<SnatExclusionType>
+			{
+				items = response.snatExclusion,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
 	}
 }
