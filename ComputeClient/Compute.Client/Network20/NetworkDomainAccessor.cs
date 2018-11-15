@@ -248,5 +248,20 @@
 				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
 			};
 		}
+		/// <summary>
+		/// Restores Snat exclusions.
+		/// </summary>
+		/// <param name="networkDomainId">
+		/// The network domain ID.
+		/// </param>
+		/// <returns>
+		/// Response containing status.
+		/// </returns>
+		public async Task<ResponseType> RestoreSnatExclusions(Guid networkDomainId)
+		{
+			return await _apiClient.PostAsync<RestoreSnatExclusionsType, ResponseType>(
+				ApiUris.RestoreSnatExclusions(_apiClient.OrganizationId),
+				new RestoreSnatExclusionsType { networkDomainId = networkDomainId.ToString() });
+		}
 	}
 }

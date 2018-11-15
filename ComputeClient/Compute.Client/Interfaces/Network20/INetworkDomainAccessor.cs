@@ -158,5 +158,15 @@
 	    Task<PagedResponse<SnatExclusionType>> GetSnatExclusionsPaginated(
 		    SnatExclusionListOptions filteringOptions = null, PageableRequest pagingOptions = null);
 
+	    /// <summary>
+	    /// Restores Snat exclusions.
+	    /// </summary>
+	    /// <param name="networkDomainId">
+	    /// The network domain ID.
+	    /// </param>
+	    /// <returns>
+	    /// Response containing status.
+	    /// </returns>
+	    Task<ResponseType> RestoreSnatExclusions(Guid networkDomainId);
 	}
 }

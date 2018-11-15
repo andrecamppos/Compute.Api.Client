@@ -308,4 +308,31 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 			}
 		}
 	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute("restoreSnatExclusions", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class RestoreSnatExclusionsType
+	{
+
+		private string networkDomainIdField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string networkDomainId
+		{
+			get
+			{
+				return this.networkDomainIdField;
+			}
+			set
+			{
+				this.networkDomainIdField = value;
+			}
+		}
+	}
 }

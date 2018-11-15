@@ -2919,5 +2919,13 @@ namespace DD.CBU.Compute.Api.Client
 		{
 			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/snatExclusion", orgId), UriKind.Relative);
 		}
+
+		/// <summary>Restores snat exclusions.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri RestoreSnatExclusions(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/restoreSnatExclusions", orgId), UriKind.Relative);
+		}
 	}
 }
