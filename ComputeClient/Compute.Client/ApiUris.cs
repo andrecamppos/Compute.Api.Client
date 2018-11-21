@@ -2827,7 +2827,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListGeographicRegion(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for two factor authentication status.</summary>
