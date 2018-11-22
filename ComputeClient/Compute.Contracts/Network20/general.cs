@@ -600,6 +600,66 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class NetworkInfrastructureType
+    {
+
+        private IdAndNameType itemField;
+
+        private ItemChoiceType itemElementNameField;
+
+        private string datacenterIdField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("network", typeof(IdAndNameType))]
+        [System.Xml.Serialization.XmlElementAttribute("networkDomain", typeof(IdAndNameType))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public IdAndNameType Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType ItemElementName
+        {
+            get
+            {
+                return this.itemElementNameField;
+            }
+            set
+            {
+                this.itemElementNameField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string datacenterId
+        {
+            get
+            {
+                return this.datacenterIdField;
+            }
+            set
+            {
+                this.datacenterIdField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]

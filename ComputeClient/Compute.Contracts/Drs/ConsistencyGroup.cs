@@ -111,6 +111,7 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
         public bool pageSizeSpecified;
     }
 
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
@@ -121,47 +122,189 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
     public partial class ConsistencyGroupType
     {
 
-        /// <remarks/>
-        public string name;
+        private string nameField;
+
+        private string descriptionField;
+
+        private ConsistencyGroupTypeJournal journalField;
+
+        private NetworkInfrastructureType sourceField;
+
+        private NetworkInfrastructureType targetField;
+
+        private ConsistencyGroupTypeServerPair[] serverPairField;
+
+        private System.DateTime createTimeField;
+
+        private string operationStatusField;
+
+        private string drsInfrastructureStatusField;
+
+        private string stateField;
+
+        private ProgressType progressField;
+
+        private string idField;
 
         /// <remarks/>
-        public string description;
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
 
         /// <remarks/>
-        public ConsistencyGroupTypeJournal journal;
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+            }
+        }
 
         /// <remarks/>
-        public DrsNetworkDomainType source;
+        public ConsistencyGroupTypeJournal journal
+        {
+            get
+            {
+                return this.journalField;
+            }
+            set
+            {
+                this.journalField = value;
+            }
+        }
 
         /// <remarks/>
-        public DrsNetworkDomainType target;
+        public NetworkInfrastructureType source
+        {
+            get
+            {
+                return this.sourceField;
+            }
+            set
+            {
+                this.sourceField = value;
+            }
+        }
+
+        /// <remarks/>
+        public NetworkInfrastructureType target
+        {
+            get
+            {
+                return this.targetField;
+            }
+            set
+            {
+                this.targetField = value;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("serverPair")]
-        public ConsistencyGroupTypeServerPair[] serverPair;
+        public ConsistencyGroupTypeServerPair[] serverPair
+        {
+            get
+            {
+                return this.serverPairField;
+            }
+            set
+            {
+                this.serverPairField = value;
+            }
+        }
 
         /// <remarks/>
-        public System.DateTime createTime;
+        public System.DateTime createTime
+        {
+            get
+            {
+                return this.createTimeField;
+            }
+            set
+            {
+                this.createTimeField = value;
+            }
+        }
 
         /// <remarks/>
-        public string operationStatus;
+        public string operationStatus
+        {
+            get
+            {
+                return this.operationStatusField;
+            }
+            set
+            {
+                this.operationStatusField = value;
+            }
+        }
 
         /// <remarks/>
-        public ConsistencyGroupTypeDrsInfrastructure drsInfrastructure;
+        public string drsInfrastructureStatus
+        {
+            get
+            {
+                return this.drsInfrastructureStatusField;
+            }
+            set
+            {
+                this.drsInfrastructureStatusField = value;
+            }
+        }
 
         /// <remarks/>
-        public int drsStatusCheckFailureCount;
+        public string state
+        {
+            get
+            {
+                return this.stateField;
+            }
+            set
+            {
+                this.stateField = value;
+            }
+        }
 
         /// <remarks/>
-        public string state;
-
-        /// <remarks/>
-        public ProgressType progress;
+        public ProgressType progress
+        {
+            get
+            {
+                return this.progressField;
+            }
+            set
+            {
+                this.progressField = value;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id;
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
     }
+
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
