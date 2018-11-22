@@ -1991,6 +1991,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/moveServer", orgId), UriKind.Relative);
         }
 
+        /// <summary>Copy Server to MCP2 Datacenter </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for move server to cluster api. </returns>
+        public static Uri CopyServer(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/copyServer", orgId), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for usage summary.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <param name="startDate">The Start Date</param>
@@ -2866,6 +2874,23 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri GetOsUnitsGroup(Guid orgId, string osUnitsGroupId)
         {
             return new Uri($"{MCP2_8_PREFIX}{orgId}/infrastructure/osUnitsGroup/{osUnitsGroupId}", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for list servers.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListServers(Guid orgId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server", UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for getting the server details.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="serverId">The server id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetServerDetails(Guid orgId, Guid serverId)
+        {
+            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
         }
     }
 }

@@ -55,6 +55,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
 
         /// <summary>The get mcp 2 deployed servers.</summary>
         /// <param name="filteringOptions">The filtering options.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<IEnumerable<ServerSummaryType>> ListServers(ServerListOptions filteringOptions = null)
+        {
+            var response = await ListServersPaginated(filteringOptions, null);
+            return response.items;
+        }
+
+        /// <summary>The get mcp 2 deployed servers.</summary>
+        /// <param name="filteringOptions">The filtering options.</param>
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<PagedResponse<ServerType>> GetServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
@@ -67,6 +76,27 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return new PagedResponse<ServerType>
             {
                 items = response.Server,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
+
+        /// <summary>The get mcp 2 deployed servers.</summary>
+        /// <param name="filteringOptions">The filtering options.</param>
+        /// <param name="pagingOptions">The paging options.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<PagedResponse<ServerSummaryType>> ListServersPaginated(ServerListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        {
+            var response = await _apiClient.GetAsync<ServersSummaryResposeType>(
+                ApiUris.ListServers(_apiClient.OrganizationId),
+                pagingOptions,
+                filteringOptions);
+
+            return new PagedResponse<ServerSummaryType>
+            {
+                items = response.server,
                 totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
                 pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
                 pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
@@ -89,6 +119,14 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ServerType> GetServer(Guid serverId)
         {
             return await _apiClient.GetAsync<ServerType>(ApiUris.GetMcp2Server(_apiClient.OrganizationId, serverId));
+        }
+
+        /// <summary>The get mcp 2 deployed server.</summary>
+        /// <param name="serverId">The server id.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ServerDetailType> GetServerDetails(Guid serverId)
+        {
+            return await _apiClient.GetAsync<ServerDetailType>(ApiUris.GetServerDetails(_apiClient.OrganizationId, serverId));
         }
 
         /// <summary>	Deletes the server described by serverId. </summary>
@@ -359,6 +397,14 @@ namespace DD.CBU.Compute.Api.Client.Server20
         public async Task<ResponseType> MoveServer(MoveServerType moveServer)
         {
             return await _apiClient.PostAsync<MoveServerType, ResponseType>(ApiUris.MoveServerToCluster(_apiClient.OrganizationId), moveServer);
+        }
+
+        /// <summary>The move server to cluster.</summary>
+        /// <param name="copyServer">The copy server.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> CopyServer(CopyServerType copyServer)
+        {
+            return await _apiClient.PostAsync<CopyServerType, ResponseType>(ApiUris.CopyServer(_apiClient.OrganizationId), copyServer);
         }
 
         /// <summary>Deploys an un customized server to MCP 2.0 data centers </summary>

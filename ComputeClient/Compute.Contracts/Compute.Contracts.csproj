@@ -119,11 +119,13 @@
     <Compile Include="Image20\OvfPackages.cs" />
     <Compile Include="Network20\CreateStaticRouteType.cs" />
     <Compile Include="Network20\PortList.cs" />
+    <Compile Include="Network20\ServerBaseType.cs" />
     <Compile Include="Network20\ServerController.cs" />
     <Compile Include="Network20\ImageControllerOverride.cs" />
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
