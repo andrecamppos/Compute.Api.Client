@@ -610,7 +610,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private IdAndNameType itemField;
 
-        private ItemChoiceType itemElementNameField;
+        private NetworkInfrastructureItemChoiceType itemElementNameField;
 
         private string datacenterIdField;
 
@@ -632,7 +632,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType ItemElementName
+        public NetworkInfrastructureItemChoiceType ItemElementName
         {
             get
             {
@@ -657,6 +657,21 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
                 this.datacenterIdField = value;
             }
         }
+    }
+
+   
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
+    public enum NetworkInfrastructureItemChoiceType
+    {
+
+        /// <remarks/>
+        network,
+
+        /// <remarks/>
+        networkDomain,
     }
 
     /// <remarks/>
