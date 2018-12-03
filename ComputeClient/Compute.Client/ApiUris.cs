@@ -2933,7 +2933,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// <returns>The <see cref="Uri"/>.</returns>
 		public static Uri RemoveSnatExclusion(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/restoreSnatExclusions", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/removeSnatExclusion", orgId), UriKind.Relative);
         }
 
         /// <summary>Add snat exclusions.</summary>
@@ -2941,7 +2941,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// <returns>The <see cref="Uri"/>.</returns>
 		public static Uri AddSnatExclusion(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/restoreSnatExclusions", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/addSnatExclusion", orgId), UriKind.Relative);
         }
 	}
 }
