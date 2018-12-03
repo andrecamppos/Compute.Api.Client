@@ -335,4 +335,104 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 			}
 		}
 	}
+
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("addSnatExclusion", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class AddSnatExclusionType
+    {
+
+        private string networkDomainIdField;
+
+        private string sourceIpv4NetworkAddressField;
+
+        private int sourceIpv4PrefixSizeField;
+
+        private string descriptionField;
+
+        /// <remarks/>
+        public string networkDomainId
+        {
+            get
+            {
+                return this.networkDomainIdField;
+            }
+            set
+            {
+                this.networkDomainIdField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string sourceIpv4NetworkAddress
+        {
+            get
+            {
+                return this.sourceIpv4NetworkAddressField;
+            }
+            set
+            {
+                this.sourceIpv4NetworkAddressField = value;
+            }
+        }
+
+        /// <remarks/>
+        public int sourceIpv4PrefixSize
+        {
+            get
+            {
+                return this.sourceIpv4PrefixSizeField;
+            }
+            set
+            {
+                this.sourceIpv4PrefixSizeField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+            }
+        }
+    }
+
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("removeSnatExclusion", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class removeSnatExclusionType
+    {
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
 }

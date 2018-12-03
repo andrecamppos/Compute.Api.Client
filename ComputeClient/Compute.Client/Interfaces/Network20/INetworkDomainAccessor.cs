@@ -168,5 +168,29 @@
 	    /// Response containing status.
 	    /// </returns>
 	    Task<ResponseType> RestoreSnatExclusions(Guid networkDomainId);
-	}
+
+        /// <summary>
+        /// This function adds Snat exclusions.
+        /// </summary>
+        /// <param name="SNATExclusion">
+        /// The SNAT Exclusion.
+        /// </param>
+        /// <returns>
+        /// Response containing status.
+        /// </returns>
+        Task<ResponseType> AddSNATExclusion(AddSnatExclusionType SNATExclusion);
+
+        /// <summary>
+        /// Removes the SNAT exclusions. 
+        /// </summary>
+        /// <param name="SNATExclusionId">
+        /// The identifier of the SNAT Exclusion. 
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<ResponseType> RemoveSNATExclusion(Guid SNATExclusionId);
+
+
+    }
 }

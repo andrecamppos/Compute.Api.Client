@@ -263,5 +263,38 @@
 				ApiUris.RestoreSnatExclusions(_apiClient.OrganizationId),
 				new RestoreSnatExclusionsType { networkDomainId = networkDomainId.ToString() });
 		}
-	}
+
+        /// <summary>
+		/// This function create a new custom Snat Exclusion.
+		/// </summary>
+		/// <param name="SNATExclusion">
+		/// The network Domain.
+		/// </param>
+		/// <returns>
+		/// Response containing status.
+		/// </returns>
+		public async Task<ResponseType> AddSNATExclusion(AddSnatExclusionType SNATExclusion)
+        {
+            return await _apiClient.PostAsync<AddSnatExclusionType, ResponseType>(
+                ApiUris.AddSnatExclusion(_apiClient.OrganizationId),
+                SNATExclusion);
+        }
+
+        /// <summary>
+		/// This function deletes a SNAT Exclusion.
+		/// </summary>
+		/// <param name="SNATExclusionId">
+		/// The static route ID.
+		/// </param>
+		/// <returns>
+		/// Response containing status.
+		/// </returns>
+		public async Task<ResponseType> RemoveSNATExclusion(Guid SNATExclusionId)
+        {
+            return await _apiClient.PostAsync<removeSnatExclusionType, ResponseType>(
+                ApiUris.RemoveSnatExclusion(_apiClient.OrganizationId),
+                new removeSnatExclusionType { id = SNATExclusionId.ToString() });
+        }
+
+    }
 }
