@@ -251,5 +251,11 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// </returns>
 		Task<ResponseType> ChangeUserPassword(ChangeUserPasswordType userPassword);
 
+		/// <summary>
+		/// Get duo status.
+		/// </summary>
+		/// <param name="userName"></param>
+		/// <returns></returns>
+		Task<DuoStatusType> GetDuoStatus(string userName);
 	}
 }

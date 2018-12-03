@@ -2943,5 +2943,13 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/addSnatExclusion", orgId), UriKind.Relative);
         }
+		/// <summary>Duo Status</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <param name="userName">User Name.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri GetDuoStatus(Guid orgId, string userName)
+		{
+			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/user/duoStatus/{1}", orgId, userName), UriKind.Relative);
+		}
 	}
 }

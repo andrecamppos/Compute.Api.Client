@@ -431,5 +431,15 @@ namespace DD.CBU.Compute.Api.Client.Account
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
-    }
+
+		/// <summary>
+		/// Get duo status.
+		/// </summary>
+		/// <param name="userName"></param>
+		/// <returns></returns>
+		public async Task<DuoStatusType> GetDuoStatus(string userName)
+		{
+			return await _apiClient.GetAsync<DuoStatusType>(ApiUris.GetDuoStatus(_apiClient.OrganizationId, userName));
+		}
+	}
 }
