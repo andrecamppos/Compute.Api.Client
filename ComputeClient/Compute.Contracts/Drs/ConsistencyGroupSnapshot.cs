@@ -71,7 +71,7 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute("snapshots", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	[System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
 	public partial class consistencyGroupSnapshots
 	{
 		private ConsistencyGroupSnapshotType[] snapshotField;
