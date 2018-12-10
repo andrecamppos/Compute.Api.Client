@@ -2465,7 +2465,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroups(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency group.</summary>
@@ -2474,7 +2474,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroup(Guid orgId, Guid id)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create consistency groups.</summary>
@@ -2482,7 +2482,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri CreateConsistencyGroups(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/createConsistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/createConsistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for get consistency group snapshots.</summary>
@@ -2490,7 +2490,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroupSnapshots(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/consistencyGroup/snapshot", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/snapshot", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for stop preview snapshot of a consistency group.</summary>
