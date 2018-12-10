@@ -58,6 +58,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private bool baselineStaticRouteConfigurationField;
 
+        private bool baselineSnatExclusionConfigurationField;
+
+        /// <remarks/>
+        public bool baselineSnatExclusionConfiguration
+        {
+            get { return this.baselineSnatExclusionConfigurationField; }
+            set { this.baselineSnatExclusionConfigurationField = value; }
+        }
         /// <remarks/>
         public bool baselineStaticRouteConfiguration
         {
