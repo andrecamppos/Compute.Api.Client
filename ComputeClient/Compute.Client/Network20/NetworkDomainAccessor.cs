@@ -291,9 +291,9 @@
 		/// </returns>
 		public async Task<ResponseType> RemoveSNATExclusion(Guid SNATExclusionId)
         {
-            return await _apiClient.PostAsync<removeSnatExclusionType, ResponseType>(
+            return await _apiClient.PostAsync<RemoveSnatExclusionType, ResponseType>(
                 ApiUris.RemoveSnatExclusion(_apiClient.OrganizationId),
-                new removeSnatExclusionType { id = SNATExclusionId.ToString() });
+                new RemoveSnatExclusionType { id = SNATExclusionId.ToString() });
         }
 
     }

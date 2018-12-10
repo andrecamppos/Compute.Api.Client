@@ -416,7 +416,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     [System.Xml.Serialization.XmlRootAttribute("removeSnatExclusion", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-    public partial class removeSnatExclusionType
+    public partial class RemoveSnatExclusionType
     {
 
         private string idField;

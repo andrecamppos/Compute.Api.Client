@@ -2912,7 +2912,7 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri($"{MCP2_9_PREFIX}/{orgId}/organization/setVpnAccess", UriKind.Relative);
         }
 
-		/// <summary>The static route.</summary>
+		/// <summary>The snat exclusion.</summary>
 		/// <param name="orgId">The org id.</param>
 		/// <returns>The <see cref="Uri"/>.</returns>
 		public static Uri SnatExclusions(Guid orgId)
