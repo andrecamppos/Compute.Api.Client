@@ -2565,10 +2565,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
         }
 
-        /// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
-        /// <param name="orgId">The organization id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri ChangeSnapshotServicePlan(Guid orgId)
+		/// <summary>Returns the relative URI of the REST request for enable snapshot replication.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri EnableSnapshotReplication(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/enableReplication", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Returns the relative URI of the REST request for change snapshot service plan.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri ChangeSnapshotServicePlan(Guid orgId)
         {
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/changeSnapshotServicePlan", orgId), UriKind.Relative);
         }

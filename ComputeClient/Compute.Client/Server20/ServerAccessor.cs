@@ -605,5 +605,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<ChangeDiskSpeedType, ResponseType>(ApiUris.ChangeDikSpeed(_apiClient.OrganizationId), changeDiskSpeed);
         }
+
+		/// <summary>
+		/// Enable snapshot replication.
+		/// </summary>
+		/// <param name="enableReplication">Server Id and datacenter id to initiate manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> EnableSnapshotReplication(EnableReplicationType enableReplication)
+		{
+			return await _apiClient.PostAsync<EnableReplicationType, ResponseType>(ApiUris.EnableSnapshotReplication(_apiClient.OrganizationId), enableReplication);
+		}
 	}
 }

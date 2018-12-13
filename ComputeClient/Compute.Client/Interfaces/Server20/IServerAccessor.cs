@@ -306,5 +306,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="restoreFromSnapshotType">Restore a file or folder from snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> RestoreFromSnapshot(RestoreFromSnapshotType restoreFromSnapshotType);
+
+		/// <summary>
+		/// Enable snapshot replication.
+		/// </summary>
+		/// <param name="enableReplication">Server Id and datacenter id to initiate manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> EnableSnapshotReplication(EnableReplicationType enableReplication);
 	}
 }

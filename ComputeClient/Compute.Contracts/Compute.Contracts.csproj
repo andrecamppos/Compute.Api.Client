@@ -371,6 +371,7 @@
     <Compile Include="Snapshot\CreateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\DeleteManualSnapshot.cs" />
     <Compile Include="Snapshot\DisableSnapshotServiceType.cs" />
+    <Compile Include="Snapshot\EnableReplicationType.cs" />
     <Compile Include="Snapshot\InitiateManualSnapshotType.cs" />
     <Compile Include="Snapshot\MigrateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\RestoreFromSnapshotType.cs" />
