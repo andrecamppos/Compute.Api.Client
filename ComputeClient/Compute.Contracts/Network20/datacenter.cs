@@ -161,17 +161,17 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public string value;
     }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DrsType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BackupType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HypervisorType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkingType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class DatacenterFeatureType
+	/// <remarks/>
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DatacenterFeatureWithTargetsType))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BackupType))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(HypervisorType))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkingType))]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class DatacenterFeatureType
     {
 
         /// <remarks/>
@@ -183,21 +183,55 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public string maintenanceStatus;
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class DrsType : DatacenterFeatureType
-    {
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class DatacenterFeatureWithTargetsType : DatacenterFeatureType
+	{
 
-        /// <remarks/>
-        public string targetDatacenters;
-    }
+		private string targetDatacenterIdsField;
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+		/// <remarks/>
+		public string targetDatacenterIds
+		{
+			get
+			{
+				return this.targetDatacenterIdsField;
+			}
+			set
+			{
+				this.targetDatacenterIdsField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class VpnType
+	{
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string url;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string vpnAccess;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public bool regionalVpn;
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -271,11 +305,12 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         public string country;
 
-        /// <remarks/>
-        public string vpnUrl;
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("vpn")]
+		public VpnType[] vpn;
 
-        /// <remarks/>
-        public string ftpsHost;
+		/// <remarks/>
+		public string ftpsHost;
 
         /// <remarks/>
         public NetworkingType networking;
@@ -293,10 +328,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public DatacenterFeatureType monitoring;
 
         /// <remarks/>
-        public DatacenterFeatureType snapshot;
+        public DatacenterFeatureWithTargetsType snapshot;
 
         /// <remarks/>
-        public DrsType drs;
+        public DatacenterFeatureWithTargetsType drs;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
