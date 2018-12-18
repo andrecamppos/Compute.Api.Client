@@ -380,18 +380,71 @@
     public partial class SnapshotServiceSummaryType
     {
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string servicePlan;
+        private string servicePlanField;
+
+        private string stateField;
+
+        private bool manualSnapshotInProgressField;
+
+        private string replicationTargetDatacenterIdField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string state;
+        public string servicePlan
+        {
+            get
+            {
+                return this.servicePlanField;
+            }
+            set
+            {
+                this.servicePlanField = value;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool manualSnapshotInProgress;
+        public string state
+        {
+            get
+            {
+                return this.stateField;
+            }
+            set
+            {
+                this.stateField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool manualSnapshotInProgress
+        {
+            get
+            {
+                return this.manualSnapshotInProgressField;
+            }
+            set
+            {
+                this.manualSnapshotInProgressField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string replicationTargetDatacenterId
+        {
+            get
+            {
+                return this.replicationTargetDatacenterIdField;
+            }
+            set
+            {
+                this.replicationTargetDatacenterIdField = value;
+            }
+        }
     }
+
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]

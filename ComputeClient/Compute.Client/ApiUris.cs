@@ -733,7 +733,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Servers(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets server snapshots windows. </summary>
@@ -754,7 +754,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
@@ -2892,7 +2892,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListServers(Guid orgId)
         {
-            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server", UriKind.Relative);
+            return new Uri($"{MCP2_9_PREFIX}/{orgId}/server/server", UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the server details.</summary>
@@ -2901,7 +2901,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetServerDetails(Guid orgId, Guid serverId)
         {
-            return new Uri($"{MCP2_8_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
+            return new Uri($"{MCP2_9_PREFIX}/{orgId}/server/server/{serverId}", UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for getting the organization details.</summary>
