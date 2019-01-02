@@ -552,12 +552,22 @@ namespace DD.CBU.Compute.Api.Client.Server20
 			return await _apiClient.PostAsync<DisableSnapshotServiceType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), disableSnapshotServiceTypeType);
 		}
 
-		/// <summary>
-		/// Restore From Snapshot.
+        /// <summary>
+		/// Disable snapshot replication
 		/// </summary>
-		/// <param name="restoreFromSnapshotType">Restore a file or folder from snapshot.</param>
+		/// <param name="disableReplicationType">Server Id to disable the snapshot replication.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> RestoreFromSnapshot(RestoreFromSnapshotType restoreFromSnapshotType)
+		public async Task<ResponseType> DisableServerSnapshotReplication(DisableReplicationType disableReplicationType)
+        {
+            return await _apiClient.PostAsync<DisableReplicationType, ResponseType>(ApiUris.DisableServerSnapshotReplication(_apiClient.OrganizationId), disableReplicationType);
+        }
+
+        /// <summary>
+        /// Restore From Snapshot.
+        /// </summary>
+        /// <param name="restoreFromSnapshotType">Restore a file or folder from snapshot.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> RestoreFromSnapshot(RestoreFromSnapshotType restoreFromSnapshotType)
 		{
 			return await _apiClient.PostAsync<RestoreFromSnapshotType, ResponseType>(ApiUris.RestoreFromSnapshot(_apiClient.OrganizationId), restoreFromSnapshotType);
 		}

@@ -38,6 +38,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private EnableSnapshotServiceTypeServerCredentials serverCredentialsField;
 
+        private string replicationTargetDatacenterIdField;
+
         private string serverIdField;
 
         /// <remarks/>
@@ -115,6 +117,19 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set
             {
                 this.serverCredentialsField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string replicationTargetDatacenterId
+        {
+            get
+            {
+                return this.replicationTargetDatacenterIdField;
+            }
+            set
+            {
+                this.replicationTargetDatacenterIdField = value;
             }
         }
 

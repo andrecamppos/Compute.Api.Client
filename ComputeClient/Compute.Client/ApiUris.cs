@@ -2562,7 +2562,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri EnableSnapshotService(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
         }
 
 		/// <summary>Returns the relative URI of the REST request for enable snapshot replication.</summary>
@@ -2603,6 +2603,14 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri DisableSnapshotService(Guid orgId)
         {
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Disabling replication on a server involves updating target servers SLA (service layer agreement) policy to remove replication but keep the policy.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DisableServerSnapshotReplication(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/disableReplication", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request to initiate manual snapshot.</summary>

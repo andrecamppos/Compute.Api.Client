@@ -257,12 +257,19 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> DisableSnapshotService(DisableSnapshotServiceType disableSnapshotServiceType);
 
-		/// <summary>
-		/// Initiate manual snapshot
+        /// <summary>
+		/// Disable snapshot replication
 		/// </summary>
-		/// <param name="initiateManualSnapshotType">Server Id and description to initiate manual snapshot.</param>
+		/// <param name="disableReplicationType">Server Id to disable the snapshot replication.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> InitiateManualSnapshot(InitiateManualSnapshotType initiateManualSnapshotType);
+		Task<ResponseType> DisableServerSnapshotReplication(DisableReplicationType disableReplicationType);
+
+        /// <summary>
+        /// Initiate manual snapshot
+        /// </summary>
+        /// <param name="initiateManualSnapshotType">Server Id and description to initiate manual snapshot.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        Task<ResponseType> InitiateManualSnapshot(InitiateManualSnapshotType initiateManualSnapshotType);
 
 		/// <summary>
 		/// Delete manual snapshot
