@@ -294,6 +294,7 @@
     <Compile Include="Server\Artifact.cs" />
     <Compile Include="Server\ChangeDiskIopsType.cs" />
     <Compile Include="Server\ChangeDiskSpeedType.cs" />
+    <Compile Include="Server\CreateDrsTargetServerType.cs" />
     <Compile Include="Server\EditSnapshotMetadataType.cs" />
     <Compile Include="Server\ClientStatusType.cs" />
     <Compile Include="Server\CloneServerType.cs" />

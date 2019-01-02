@@ -2967,5 +2967,13 @@ namespace DD.CBU.Compute.Api.Client
 		{
 			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/user/duoStatus/{1}", orgId, userName), UriKind.Relative);
 		}
+
+		/// <summary>Returns the relative URI of the REST request for Create Drs Target Server.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CreateDrsTargetServer(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/createDrsTargetServer", orgId), UriKind.Relative);
+		}
 	}
 }

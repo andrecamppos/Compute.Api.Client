@@ -320,5 +320,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="enableReplication">Server Id and datacenter id to initiate manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> EnableSnapshotReplication(EnableReplicationType enableReplication);
+
+		/// <summary>
+		/// Create Drs Target Server.
+		/// </summary>
+		/// <param name="createDrsTargetServer">Drs Target Server details</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> CreateDrsTargetServer(CreateDrsTargetServerType createDrsTargetServer);
 	}
 }
