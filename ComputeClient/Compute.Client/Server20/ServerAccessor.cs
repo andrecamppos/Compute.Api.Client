@@ -615,5 +615,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<EnableReplicationType, ResponseType>(ApiUris.EnableSnapshotReplication(_apiClient.OrganizationId), enableReplication);
 		}
+
+		/// <summary>
+		/// Create Drs Target Server.
+		/// </summary>
+		/// <param name="createDrsTargetServer">Drs Target Server details</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> CreateDrsTargetServer(CreateDrsTargetServerType createDrsTargetServer)
+		{
+			return await _apiClient.PostAsync<CreateDrsTargetServerType, ResponseType>(ApiUris.CreateDrsTargetServer(_apiClient.OrganizationId), createDrsTargetServer);
+		}
 	}
 }
