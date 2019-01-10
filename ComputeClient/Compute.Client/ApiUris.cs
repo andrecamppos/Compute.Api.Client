@@ -118,10 +118,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/createSnapshotPreviewServer", orgId), UriKind.Relative);
         }
 
-        /// <summary>The path (relative to the base API URL) to Migrate Snapshot Preview Server.</summary>
-        /// <param name="orgId">The org Id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri MigrateSnapShotPreviewServer(Guid orgId)
+		/// <summary>The path (relative to the base API URL) to Create Replicated Snapshot Preview Server.</summary>
+		/// <param name="orgId">The org Id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CreateReplicatedSnapshotPreviewServer(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/createReplicatedSnapshotPreviewServer", orgId), UriKind.Relative);
+		}
+
+		/// <summary>The path (relative to the base API URL) to Migrate Snapshot Preview Server.</summary>
+		/// <param name="orgId">The org Id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri MigrateSnapShotPreviewServer(Guid orgId)
         {
             return new Uri(string.Format(MCP2_8_PREFIX + "{0}/snapshot/migrateSnapshotPreviewServer", orgId), UriKind.Relative);
         }

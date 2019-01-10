@@ -369,6 +369,7 @@
     <Compile Include="Server\SnapshotWindows.cs" />
     <Compile Include="Server\SetNicConnectivityType.cs" />
     <Compile Include="Server\SoftwareLabelType.cs" />
+    <Compile Include="Snapshot\CreateReplicatedSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\CreateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\DeleteManualSnapshot.cs" />
     <Compile Include="Snapshot\DisableSnapshotServiceType.cs" />
