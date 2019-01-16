@@ -2468,6 +2468,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
         }
 
+        /// <summary>Giving a User the ability to Clean a Consistency Group if the CG is in a Failed State.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri CleanConsistencyGroup(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/cleanConsistencyGroup", orgId), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for get consistency group.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <param name="id">The Consistency Group id.</param>
