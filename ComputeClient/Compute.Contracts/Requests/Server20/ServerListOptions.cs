@@ -107,10 +107,20 @@
 		/// </summary>
 		public const string TagIdField = "tagId.";
 
-        /// <summary>
+		/// <summary>
+		/// The "replicationEnabled" field name.
+		/// </summary>
+		public const string ReplicationEnabledField = "replicationEnabled";
+
+		/// <summary>
+		/// The "replicationTargetDatacenterId" field name.
+		/// </summary>
+		public const string ReplicationTargetDatacenterIdField = "replicationTargetDatacenterId";
+
+		/// <summary>
 		/// The "deploymentMode" field name.
 		/// </summary>
-        public Guid? TagKeyId { get; set; }
+		public Guid? TagKeyId { get; set; }
 
         /// <summary>
 		/// The "deploymentMode" field name.
@@ -279,19 +289,38 @@
             set { SetFilter(DrsEligibleField, value); }
         }
 
-        /// <summary>
-        /// Gets or sets the deploymentMode filter.
-        /// </summary>
-        public string DeploymentMode
+		/// <summary>
+		/// Gets or sets the replicationEnabled filter.
+		/// </summary>
+		public bool? ReplicationEnabled
+		{
+			get { return GetFilter<bool>(ReplicationEnabledField); }
+			set { SetFilter(ReplicationEnabledField, value); }
+		}
+
+
+		/// <summary>
+		/// Gets or sets the deploymentMode filter.
+		/// </summary>
+		public string DeploymentMode
         {
             get { return GetFilter<string>(DeploymentModeField); }
             set { SetFilter(DeploymentModeField, value); }
         }
 
-        /// <summary>	
-        /// Identifies Virtual Listeners by their name.
-        /// </summary>
-        public string TagValue
+		/// <summary>
+		/// Gets or sets the replicationTargetDatacenterId filter.
+		/// </summary>
+		public string ReplicationTargetDatacenterId
+		{
+			get { return GetFilter<string>(ReplicationTargetDatacenterIdField); }
+			set { SetFilter(ReplicationTargetDatacenterIdField, value); }
+		}
+
+		/// <summary>	
+		/// Identifies Virtual Listeners by their name.
+		/// </summary>
+		public string TagValue
         {
             get
             {
