@@ -20,9 +20,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		private string typeField;
 
-		private string sourceIpv4NetworkAddressField;
+		private string destinationIpv4NetworkAddressField;
 
-		private int sourceIpv4PrefixSizeField;
+		private int destinationIpv4PrefixSizeField;
 
 		private string descriptionField;
 
@@ -61,28 +61,28 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 		}
 
 		/// <remarks/>
-		public string sourceIpv4NetworkAddress
-		{
+		public string destinationIpv4NetworkAddress
+        {
 			get
 			{
-				return this.sourceIpv4NetworkAddressField;
+				return this.destinationIpv4NetworkAddressField;
 			}
 			set
 			{
-				this.sourceIpv4NetworkAddressField = value;
+				this.destinationIpv4NetworkAddressField = value;
 			}
 		}
 
 		/// <remarks/>
-		public int sourceIpv4PrefixSize
-		{
+		public int destinationIpv4PrefixSize
+        {
 			get
 			{
-				return this.sourceIpv4PrefixSizeField;
+				return this.destinationIpv4PrefixSizeField;
 			}
 			set
 			{
-				this.sourceIpv4PrefixSizeField = value;
+				this.destinationIpv4PrefixSizeField = value;
 			}
 		}
 
