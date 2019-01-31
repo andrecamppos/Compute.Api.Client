@@ -32,13 +32,21 @@
 		/// <returns>The CSV formatted result</returns>
 		Task<object> GetOsUnitsUsageReport(DateTime startDate, DateTime endDate);
 
-		/// <summary>
-		/// Retrieves a CSV-formatted daily usage report by identifying the software unit calculation specifics for any Priced Software on virtual servers across the account.
+        /// <summary>
+		/// Retrieves a CSV-formatted daily usage report by identifying the Snapshot usage.
 		/// </summary>
 		/// <param name="startDate">The Start Date</param>
 		/// <param name="endDate">The End Date</param>
 		/// <returns>The CSV formatted result</returns>
-		Task<object> GetSoftwareUnitsUsageReport(DateTime startDate, DateTime endDate);
+		Task<object> GetSnapshotUsageReport(DateTime startDate, DateTime endDate);
+
+        /// <summary>
+        /// Retrieves a CSV-formatted daily usage report by identifying the software unit calculation specifics for any Priced Software on virtual servers across the account.
+        /// </summary>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The CSV formatted result</returns>
+        Task<object> GetSoftwareUnitsUsageReport(DateTime startDate, DateTime endDate);
 
         /// <summary>
         /// Retrieves a CSV-formatted daily usage report by identifying the specifics of all Backup usage across the account.
