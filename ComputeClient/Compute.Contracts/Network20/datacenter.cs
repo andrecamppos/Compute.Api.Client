@@ -352,7 +352,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class datacenters
     {
 
-        /// <remarks/>
+        /// <remarks></remarks>
         [System.Xml.Serialization.XmlElementAttribute("datacenter")]
         public DatacenterType[] datacenter;
 
