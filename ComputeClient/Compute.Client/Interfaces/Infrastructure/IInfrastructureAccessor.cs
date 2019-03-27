@@ -85,6 +85,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         Task<PagedResponse<GeographicRegionType>> ListGeographicRegions(IPageableRequest pagingOptions = null, ListGeographicRegionOptions filterOptions = null);
 
         /// <summary>
+        /// Get geographic region properties
+        /// </summary>
+        /// <returns>Geo Region Properties</returns>
+        Task<GeographicRegionProperties> GetGeographicRegionPropertiess();
+
+        /// <summary>
         /// List all Os Units Groups
         /// </summary>
         /// <param name="pagingOptions">Paging options</param>

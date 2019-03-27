@@ -167,6 +167,18 @@
         }
 
         /// <summary>
+        /// Get geographic region properties
+        /// </summary>
+        /// <returns>Geo Regions</returns>
+        public async Task<GeographicRegionProperties> GetGeographicRegionPropertiess()
+        {
+            GeographicRegionProperties response = await _apiClient.GetAsync<GeographicRegionProperties>(
+                ApiUris.GetGeographicRegionProperties(_apiClient.OrganizationId));
+
+            return response;
+        }
+
+        /// <summary>
         /// List all Os Units Groups
         /// </summary>
         /// <param name="pagingOptions">Paging options</param>
