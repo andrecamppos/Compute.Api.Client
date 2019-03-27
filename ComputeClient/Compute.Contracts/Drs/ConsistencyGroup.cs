@@ -172,13 +172,53 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
     public partial class ConsistencyGroupTypeJournal
     {
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int sizeGb;
+        private int sizeGbField;
+
+        private int extentCountField;
+
+        private int maxSizeGbField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int extentCount;
+        public int sizeGb
+        {
+            get
+            {
+                return this.sizeGbField;
+            }
+            set
+            {
+                this.sizeGbField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int extentCount
+        {
+            get
+            {
+                return this.extentCountField;
+            }
+            set
+            {
+                this.extentCountField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int maxSizeGb
+        {
+            get
+            {
+                return this.maxSizeGbField;
+            }
+            set
+            {
+                this.maxSizeGbField = value;
+            }
+        }
     }
 
     /// <remarks/>
