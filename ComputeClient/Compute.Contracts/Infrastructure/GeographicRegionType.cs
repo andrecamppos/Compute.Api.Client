@@ -272,45 +272,41 @@ public partial class geographicRegions {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-public partial class GeographicRegionProperties
-{
-
-    private string name;
-
-    private string ftpsHost;
-
-    private string timeZone;
-
-    private GeoVpnType vpn;
-
-    private string monitoringUrl;
-
-    [System.Xml.Serialization.XmlElementAttribute("property")]
-    private NameValuePairType[] property;
-
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    private string id;
-
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    private bool isHome;
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
 public partial class GeoVpnType
 {
 
-    [System.Xml.Serialization.XmlElementAttribute("vpnAccess")]
-    private VpnAccessType[] vpnAccess;
+    private VpnAccessType[] vpnAccessField;
 
-    [System.Xml.Serialization.XmlElementAttribute("regionalVpnUrl")]
     private GeoVpnTypeRegionalVpnUrl[] regionalVpnUrlField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("vpnAccess")]
+    public VpnAccessType[] vpnAccess
+    {
+        get
+        {
+            return this.vpnAccessField;
+        }
+        set
+        {
+            this.vpnAccessField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("regionalVpnUrl")]
+    public GeoVpnTypeRegionalVpnUrl[] regionalVpnUrl
+    {
+        get
+        {
+            return this.regionalVpnUrlField;
+        }
+        set
+        {
+            this.regionalVpnUrlField = value;
+        }
+    }
 }
 
 /// <remarks/>
@@ -322,11 +318,9 @@ public partial class GeoVpnType
 public partial class VpnAccessType
 {
 
-    [System.Xml.Serialization.XmlAttributeAttribute()]
     private bool defaultField;
 
-    [System.Xml.Serialization.XmlTextAttribute()]
-    private string value;
+    private string valueField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -341,6 +335,20 @@ public partial class VpnAccessType
             this.defaultField = value;
         }
     }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlTextAttribute()]
+    public string Value
+    {
+        get
+        {
+            return this.valueField;
+        }
+        set
+        {
+            this.valueField = value;
+        }
+    }
 }
 
 /// <remarks/>
@@ -352,9 +360,169 @@ public partial class VpnAccessType
 public partial class GeoVpnTypeRegionalVpnUrl
 {
 
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    private string accessType;
+    private string accessTypeField;
 
+    private string valueField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string accessType
+    {
+        get
+        {
+            return this.accessTypeField;
+        }
+        set
+        {
+            this.accessTypeField = value;
+        }
+    }
+
+    /// <remarks/>
     [System.Xml.Serialization.XmlTextAttribute()]
-    private string value;
+    public string Value
+    {
+        get
+        {
+            return this.valueField;
+        }
+        set
+        {
+            this.valueField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+public partial class geographicRegionProperties
+{
+
+    private string nameField;
+
+    private string ftpsHostField;
+
+    private string timeZoneField;
+
+    private GeoVpnType vpnField;
+
+    private string monitoringUrlField;
+
+    private NameValuePairType[] propertyField;
+
+    private string idField;
+
+    private bool isHomeField;
+
+    /// <remarks/>
+    public string name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string ftpsHost
+    {
+        get
+        {
+            return this.ftpsHostField;
+        }
+        set
+        {
+            this.ftpsHostField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string timeZone
+    {
+        get
+        {
+            return this.timeZoneField;
+        }
+        set
+        {
+            this.timeZoneField = value;
+        }
+    }
+
+    /// <remarks/>
+    public GeoVpnType vpn
+    {
+        get
+        {
+            return this.vpnField;
+        }
+        set
+        {
+            this.vpnField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string monitoringUrl
+    {
+        get
+        {
+            return this.monitoringUrlField;
+        }
+        set
+        {
+            this.monitoringUrlField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("property")]
+    public NameValuePairType[] property
+    {
+        get
+        {
+            return this.propertyField;
+        }
+        set
+        {
+            this.propertyField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string id
+    {
+        get
+        {
+            return this.idField;
+        }
+        set
+        {
+            this.idField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public bool isHome
+    {
+        get
+        {
+            return this.isHomeField;
+        }
+        set
+        {
+            this.isHomeField = value;
+        }
+    }
 }

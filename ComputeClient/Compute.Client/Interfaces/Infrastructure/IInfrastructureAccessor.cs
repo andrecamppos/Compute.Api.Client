@@ -88,7 +88,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// Get geographic region properties
         /// </summary>
         /// <returns>Geo Region Properties</returns>
-        Task<GeographicRegionProperties> GetGeographicRegionPropertiess();
+        Task<geographicRegionProperties> GetGeographicRegionProperties();
 
         /// <summary>
         /// List all Os Units Groups

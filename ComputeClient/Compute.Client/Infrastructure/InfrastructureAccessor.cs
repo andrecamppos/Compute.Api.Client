@@ -170,9 +170,9 @@
         /// Get geographic region properties
         /// </summary>
         /// <returns>Geo Regions</returns>
-        public async Task<GeographicRegionProperties> GetGeographicRegionPropertiess()
+        public async Task<geographicRegionProperties> GetGeographicRegionProperties()
         {
-            GeographicRegionProperties response = await _apiClient.GetAsync<GeographicRegionProperties>(
+            geographicRegionProperties response = await _apiClient.GetAsync<geographicRegionProperties>(
                 ApiUris.GetGeographicRegionProperties(_apiClient.OrganizationId));
 
             return response;
