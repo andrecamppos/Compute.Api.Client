@@ -9,7 +9,7 @@ namespace DD.CBU.Compute.Api.Client
 
     /// <summary>
     /// Constants and formatters for API URLs.
-    /// </summary>
+    /// </summary> 
     public static class ApiUris
     {
         /// <summary>	The MCP 1.0 prefix. </summary>
