@@ -2032,7 +2032,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="startDate">The Start Date</param>
         /// <param name="endDate">The End Date</param>
         /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        public static Uri OsUnitsUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
@@ -2042,9 +2042,19 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="startDate">The Start Date</param>
         /// <param name="endDate">The End Date</param>
         /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri SnapshotUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        public static Uri SnapshotUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/snapshotUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for Snapshot Usage Report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SecurityGroupUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
+        {
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/securityGroupUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
