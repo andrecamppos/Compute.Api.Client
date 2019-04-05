@@ -2047,7 +2047,7 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/snapshotUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
-        /// <summary>Returns the relative URI of the REST request for Snapshot Usage Report.</summary>
+        /// <summary>Returns the relative URI of the REST request for Security Group Usage Report.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <param name="startDate">The Start Date</param>
         /// <param name="endDate">The End Date</param>
