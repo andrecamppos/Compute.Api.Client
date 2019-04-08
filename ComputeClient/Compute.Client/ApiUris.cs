@@ -1593,7 +1593,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri GetMonitoringUsageReport(Guid orgId, DateTime startDate, DateTime? endDate)
         {
-            var url = string.Format(MCP2_9_PREFIX + "{0}/report/usageMonitoring?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
+            var url = string.Format(MCP2_9_PREFIX + "{0}/report/monitoringUsageReport?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
 
             if (endDate.HasValue)
             {
@@ -2095,7 +2095,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DrsPairsUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/usageDrsSourceServers?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/drsPairsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 os images. </summary>
@@ -2867,7 +2867,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="orgId">	The organization Id. </param>
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RestoreFromSnapshot(Guid orgId)
-        {
+        { 
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
         }
 
