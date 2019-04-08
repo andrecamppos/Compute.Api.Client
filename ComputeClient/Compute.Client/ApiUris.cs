@@ -840,17 +840,25 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/deleteFirewallRule", orgId), UriKind.Relative);
         }
 
-        #endregion
+        /// <summary>Gets the list firewall rules statistics URL.</summary>
+        /// <param name="orgId">The org Id.</param>
+        /// <returns>The URL.</returns>
+        public static Uri GetFirewallRulesStatistics(Guid orgId)
+        {
+	        return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/firewallRuleStatistics", orgId), UriKind.Relative);
+        }
 
-        #region VLAN
+		#endregion
 
-        /// <summary>The get Virtual LAN.</summary>
-        /// <param name="orgId">The org id.</param>
-        /// <param name="id">The id.</param>
-        /// <param name="vlanName">The  Virtual LAN name.</param>
-        /// <param name="networkDomainId">The network domain id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
+		#region VLAN
+
+		/// <summary>The get Virtual LAN.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <param name="id">The id.</param>
+		/// <param name="vlanName">The  Virtual LAN name.</param>
+		/// <param name="networkDomainId">The network domain id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
         {
             var queryParameters = new List<string>();
             if (id != Guid.Empty)
