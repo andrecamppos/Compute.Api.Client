@@ -147,7 +147,7 @@
         public bool started;
 
         /// <remarks/>
-        public EmptyType requiresRestart;
+        public bool? requiresRestart;
 
         /// <remarks/>
         public string state;
