@@ -128,6 +128,7 @@
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\StaticRoute.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Requests\Network20\FirewallRuleStatisticsListOptions.cs" />
     <Compile Include="Requests\Network20\SnatExclusionListOptions.cs" />
     <Compile Include="Server\CopyServerType.cs" />
     <Compile Include="Organization\SetTwoFactorAuthentication.cs" />

@@ -840,17 +840,25 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/deleteFirewallRule", orgId), UriKind.Relative);
         }
 
-        #endregion
+        /// <summary>Gets the list firewall rules statistics URL.</summary>
+        /// <param name="orgId">The org Id.</param>
+        /// <returns>The URL.</returns>
+        public static Uri GetFirewallRulesStatistics(Guid orgId)
+        {
+	        return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/firewallRuleStatistics", orgId), UriKind.Relative);
+        }
 
-        #region VLAN
+		#endregion
 
-        /// <summary>The get Virtual LAN.</summary>
-        /// <param name="orgId">The org id.</param>
-        /// <param name="id">The id.</param>
-        /// <param name="vlanName">The  Virtual LAN name.</param>
-        /// <param name="networkDomainId">The network domain id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
+		#region VLAN
+
+		/// <summary>The get Virtual LAN.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <param name="id">The id.</param>
+		/// <param name="vlanName">The  Virtual LAN name.</param>
+		/// <param name="networkDomainId">The network domain id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
         {
             var queryParameters = new List<string>();
             if (id != Guid.Empty)
@@ -1593,7 +1601,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The URL</returns>
         public static Uri GetMonitoringUsageReport(Guid orgId, DateTime startDate, DateTime? endDate)
         {
-            var url = string.Format(MCP2_9_PREFIX + "{0}/report/usageMonitoring?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
+            var url = string.Format(MCP2_9_PREFIX + "{0}/report/monitoringUsageReport?startDate={1}", orgId, startDate.ToString("yyyy-MM-dd"));
 
             if (endDate.HasValue)
             {
@@ -2095,7 +2103,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri DrsPairsUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/usageDrsSourceServers?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/drsPairsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 os images. </summary>
@@ -2867,7 +2875,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="orgId">	The organization Id. </param>
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri RestoreFromSnapshot(Guid orgId)
-        {
+        { 
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
         }
 
