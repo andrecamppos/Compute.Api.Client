@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using System.Text;
+using System.Text; 
 
 namespace DD.CBU.Compute.Api.Client
 {
@@ -840,17 +840,25 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/deleteFirewallRule", orgId), UriKind.Relative);
         }
 
-        #endregion
+        /// <summary>Gets the list firewall rules statistics URL.</summary>
+        /// <param name="orgId">The org Id.</param>
+        /// <returns>The URL.</returns>
+        public static Uri GetFirewallRulesStatistics(Guid orgId)
+        {
+	        return new Uri(string.Format(MCP2_9_PREFIX + "{0}/network/firewallRuleStatistics", orgId), UriKind.Relative);
+        }
 
-        #region VLAN
+		#endregion
 
-        /// <summary>The get Virtual LAN.</summary>
-        /// <param name="orgId">The org id.</param>
-        /// <param name="id">The id.</param>
-        /// <param name="vlanName">The  Virtual LAN name.</param>
-        /// <param name="networkDomainId">The network domain id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
+		#region VLAN
+
+		/// <summary>The get Virtual LAN.</summary>
+		/// <param name="orgId">The org id.</param>
+		/// <param name="id">The id.</param>
+		/// <param name="vlanName">The  Virtual LAN name.</param>
+		/// <param name="networkDomainId">The network domain id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri GetVlan(Guid orgId, Guid id, string vlanName, Guid networkDomainId)
         {
             var queryParameters = new List<string>();
             if (id != Guid.Empty)
@@ -2032,7 +2040,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="startDate">The Start Date</param>
         /// <param name="endDate">The End Date</param>
         /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        public static Uri OsUnitsUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
@@ -2042,9 +2050,19 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="startDate">The Start Date</param>
         /// <param name="endDate">The End Date</param>
         /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri SnapshotUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+        public static Uri SnapshotUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/snapshotUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for Security Group Usage Report.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SecurityGroupUsageReport(Guid orgId, DateTime startDate, DateTime endDate)
+        {
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/report/securityGroupUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
@@ -2867,6 +2885,14 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri ListGeographicRegion(Guid orgId)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
+        }
+
+        /// <summary> Get Geographic Region Properties. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetGeographicRegionProperties(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/infrastructure/geographicRegionProperties", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for two factor authentication status.</summary>

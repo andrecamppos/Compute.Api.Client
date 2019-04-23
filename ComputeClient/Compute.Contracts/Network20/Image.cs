@@ -34,6 +34,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private uint memoryGbField;
 
+        private NameValuePairType[] advancedVirtualizationSettingField;
+
         private string[] softwareLabelField;
 
         private System.DateTime createTimeField;
@@ -80,6 +82,20 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.memoryGbField; }
             set { this.memoryGbField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("advancedVirtualizationSetting")]
+        public NameValuePairType[] advancedVirtualizationSetting
+        {
+            get
+            {
+                return this.advancedVirtualizationSettingField;
+            }
+            set
+            {
+                this.advancedVirtualizationSettingField = value;
+            }
         }
 
         /// <remarks/>

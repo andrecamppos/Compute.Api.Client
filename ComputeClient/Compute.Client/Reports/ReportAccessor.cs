@@ -64,7 +64,7 @@
 		{
 			var data =
 				await
-					_apiClient.GetAsync<object>(ApiUris.OsUnitsUsageReportReport(_apiClient.OrganizationId, startDate, endDate));
+					_apiClient.GetAsync<object>(ApiUris.OsUnitsUsageReport(_apiClient.OrganizationId, startDate, endDate));
 			return data;
 		}
 
@@ -78,7 +78,21 @@
         {
             var data =
                 await
-                    _apiClient.GetAsync<object>(ApiUris.SnapshotUsageReportReport(_apiClient.OrganizationId, startDate, endDate));
+                    _apiClient.GetAsync<object>(ApiUris.SnapshotUsageReport(_apiClient.OrganizationId, startDate, endDate));
+            return data;
+        }
+
+        /// <summary>
+        /// Retrieves a CSV-formatted daily usage report by identifying the Security Group usage.
+        /// </summary>
+        /// <param name="startDate">The Start Date</param>
+        /// <param name="endDate">The End Date</param>
+        /// <returns>The CSV formatted result</returns>
+        public async Task<object> GetSecurityGroupUsageReport(DateTime startDate, DateTime endDate)
+        {
+            var data =
+                await
+                    _apiClient.GetAsync<object>(ApiUris.SecurityGroupUsageReport(_apiClient.OrganizationId, startDate, endDate));
             return data;
         }
 
