@@ -7,6 +7,7 @@ namespace DD.CBU.Compute.Api.Client
     using System.Collections.Generic;
     using System.Linq;
 
+    /// Testing GitHub permissions
     /// <summary>
     /// Constants and formatters for API URLs.
     /// </summary>
