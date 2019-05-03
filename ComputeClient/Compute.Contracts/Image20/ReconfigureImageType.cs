@@ -9,10 +9,9 @@
 [System.Xml.Serialization.XmlRootAttribute("reconfigureImage", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
 public partial class ReconfigureImageType
 {
-
     /// <remarks/>
     public ReconfigureImageTypeAdvancedVirtualizationSettings advancedVirtualizationSettings;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public string id;
@@ -26,28 +25,31 @@ public partial class ReconfigureImageType
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
 public partial class ReconfigureImageTypeAdvancedVirtualizationSettings
 {
+    /// <remarks/>
+    public bool nestedHardwareVirtualization
+    {
+        get { return this.nestedHardwareVirtualization; }
+        set { this.nestedHardwareVirtualization = value; }
+    }
 
     /// <remarks/>
-    public bool nestedHardwareVirtualization;
+    public string cpuLatencySensitivity
+    {
+        get { return this.cpuLatencySensitivity; }
+        set { this.cpuLatencySensitivity = value; }
+    }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool nestedHardwareVirtualizationSpecified;
+    public bool numaAutosize
+    {
+        get { return this.numaAutosize; }
+        set { this.numaAutosize = value; }
+    }
 
     /// <remarks/>
-    public string cpuLatencySensitivity;
-
-    /// <remarks/>
-    public bool numaAutosize;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool numaAutosizeSpecified;
-
-    /// <remarks/>
-    public bool enableHostInfoToVmTools;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool enableHostInfoToVmToolsSpecified;
+    public bool enableHostInfoToVmTools
+    {
+        get { return this.enableHostInfoToVmTools; }
+        set { this.enableHostInfoToVmTools = value; }
+    }
 }
