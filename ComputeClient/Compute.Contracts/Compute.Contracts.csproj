@@ -111,6 +111,7 @@
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Image20\CleanCustomerImageIdType.cs" />
+    <Compile Include="Image20\ReconfigureImageType.cs" />
     <Compile Include="Infrastructure\GeographicRegionType.cs" />
     <Compile Include="Network20\SnatExclusion.cs" />
     <Compile Include="Organization\Organization.cs" />
