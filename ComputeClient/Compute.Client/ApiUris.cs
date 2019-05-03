@@ -18,6 +18,9 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.9 prefix. </summary>
         public const string MCP2_9_PREFIX = "caas/2.9/";
 
+        /// <summary>	The MCP 2.9 prefix. </summary>
+        public const string MCP2_10_PREFIX = "caas/2.10/";
+
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
         /// </summary>
@@ -454,6 +457,14 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri CopyCustomerImage(Guid orgId)
         {
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/image/copyImage", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Reconfigure Advanced Virtualization Settings on a Customer Image.</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ReconfigureImage(Guid orgId)
+        {
+            return new Uri(String.Format(MCP2_10_PREFIX + "{0}/image/reconfigureImage", orgId), UriKind.Relative);
         }
 
         /// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
