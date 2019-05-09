@@ -152,7 +152,7 @@ namespace Compute.Client.UnitTests
         public void ReconfigureImageUri()
         {
             var uri = ApiUris.ReconfigureImage(_orgId);
-            Assert.AreEqual(ApiUris.MCP2_10_PREFIX + _orgId + "/image/reconfigureImage", uri.OriginalString);
+            Assert.AreEqual(ApiUris.MCP2_9_PREFIX + _orgId + "/image/reconfigureImage", uri.OriginalString);
         }
     }
 }
