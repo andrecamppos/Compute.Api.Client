@@ -147,5 +147,12 @@ namespace Compute.Client.UnitTests
             var uri = ApiUris.DeleteVipNode(_orgId);
             Assert.AreEqual(ApiUris.MCP2_9_PREFIX + _orgId + "/networkDomainVip/deleteNode", uri.OriginalString);
         }
+
+        [TestMethod]
+        public void ReconfigureImageUri()
+        {
+            var uri = ApiUris.ReconfigureImage(_orgId);
+            Assert.AreEqual(ApiUris.MCP2_9_PREFIX + _orgId + "/image/reconfigureImage", uri.OriginalString);
+        }
     }
 }

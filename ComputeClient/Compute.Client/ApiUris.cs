@@ -456,6 +456,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_9_PREFIX + "{0}/image/copyImage", orgId), UriKind.Relative);
         }
 
+        /// <summary>Reconfigure Advanced Virtualization Settings on a Customer Image.</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ReconfigureImage(Guid orgId)
+        {
+            return new Uri(String.Format(MCP2_9_PREFIX + "{0}/image/reconfigureImage", orgId), UriKind.Relative);
+        }
+
         /// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
         /// <param name="orgId">The organization id</param>
         /// <returns>A list of deployed servers</returns>
