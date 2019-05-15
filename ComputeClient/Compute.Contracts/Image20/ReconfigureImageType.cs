@@ -26,13 +26,13 @@ public partial class ReconfigureImageType
 public partial class ReconfigureImageTypeAdvancedVirtualizationSettings
 {
     /// <remarks/>
-    public bool nestedHardwareVirtualization;
+    public bool? nestedHardwareVirtualization;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool nestedHardwareVirtualizationSpecified
     {
-        get { return true; }
+        get { return this.nestedHardwareVirtualization != null; }
         set { this.nestedHardwareVirtualizationSpecified = value; }
     }
 
@@ -40,24 +40,24 @@ public partial class ReconfigureImageTypeAdvancedVirtualizationSettings
     public string cpuLatencySensitivity;
 
     /// <remarks/>
-    public bool numaAutosize;
+    public bool? numaAutosize;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool numaAutosizeSpecified
     {
-        get { return true; }
+        get { return this.numaAutosize != null; }
         set { this.numaAutosizeSpecified = value; }
     }
 
     /// <remarks/>
-    public bool enableHostInfoToVmTools;
+    public bool? enableHostInfoToVmTools;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool enableHostInfoToVmToolsSpecified
     {
-        get { return true; }
+        get { return this.enableHostInfoToVmTools != null; }
         set { this.enableHostInfoToVmToolsSpecified = value; }
     }
 }
