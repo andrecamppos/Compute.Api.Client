@@ -58,7 +58,24 @@
     public partial class ServerDetailType : ServerBaseType
     {
         /// <remarks/>
+        public NameValuePairType[] advancedVirtualizationSettingField;
+
+        /// <remarks/>
         public SnapshotServiceDetailType snapshotService;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("advancedVirtualizationSetting")]
+        public NameValuePairType[] AdvancedVirtualizationSetting
+        {
+            get
+            {
+                return this.advancedVirtualizationSettingField;
+            }
+            set
+            {
+                this.advancedVirtualizationSettingField = value;
+            }
+        }
     }
 
     /// <remarks/>
