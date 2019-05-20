@@ -1868,28 +1868,40 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class AdvancedVirtualizationSettingsType
     {
         /// <remarks/>
-        public bool nestedHardwareVirtualization;
+        public bool? nestedHardwareVirtualization;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nestedHardwareVirtualizationSpecified;
+        public bool nestedHardwareVirtualizationSpecified
+        {
+            get { return this.nestedHardwareVirtualization != null; }
+            set { this.nestedHardwareVirtualizationSpecified = value; }
+        }
 
         /// <remarks/>
         public string cpuLatencySensitivity;
 
         /// <remarks/>
-        public bool numaAutosize;
+        public bool? numaAutosize;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool numaAutosizeSpecified;
+        public bool numaAutosizeSpecified
+        {
+            get { return this.numaAutosize != null; }
+            set { this.numaAutosizeSpecified = value; }
+        }
 
         /// <remarks/>
-        public bool enableHostInfoToVmTools;
+        public bool? enableHostInfoToVmTools;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool enableHostInfoToVmToolsSpecified;
+        public bool enableHostInfoToVmToolsSpecified
+        {
+            get { return this.enableHostInfoToVmTools != null; }
+            set { this.enableHostInfoToVmToolsSpecified = value; }
+        }
     }
 
     /// <remarks/>
