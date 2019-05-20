@@ -18,6 +18,9 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.9 prefix. </summary>
         public const string MCP2_9_PREFIX = "caas/2.9/";
 
+        /// <summary>	The MCP 2.9 prefix. </summary>
+        public const string MCP2_10_PREFIX = "caas/2.10/";
+
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
         /// </summary>
@@ -2506,7 +2509,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroups(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_10_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
         }
 
         /// <summary>Giving a User the ability to Clean a Consistency Group if the CG is in a Failed State.</summary>
@@ -2523,7 +2526,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetConsistencyGroup(Guid orgId, Guid id)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
+            return new Uri(string.Format(MCP2_10_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create consistency groups.</summary>
