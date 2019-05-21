@@ -187,6 +187,8 @@ public partial class SnapshotServerConfigType
 
     private uint memoryGbField;
 
+    private NameValuePairType[] advancedVirtualizationSettingField;
+
     private SnapshotServerConfigTypeScsiController[] scsiControllerField;
 
     private SnapshotServerConfigTypeSataController[] sataControllerField;
@@ -239,6 +241,20 @@ public partial class SnapshotServerConfigType
         set
         {
             this.memoryGbField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("advancedVirtualizationSetting")]
+    public NameValuePairType[] advancedVirtualizationSetting
+    {
+        get
+        {
+            return this.advancedVirtualizationSettingField;
+        }
+        set
+        {
+            this.advancedVirtualizationSettingField = value;
         }
     }
 
