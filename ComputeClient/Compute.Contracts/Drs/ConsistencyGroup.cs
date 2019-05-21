@@ -243,6 +243,10 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string state;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool reIpAddressRulesDefined;
     }
 
     /// <remarks/>
@@ -305,6 +309,18 @@ namespace DD.CBU.Compute.Api.Contracts.Drs
 
         /// <remarks/>
         public string targetServerId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string state;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool reIpAddressRulesDefined;
     }
 
 
