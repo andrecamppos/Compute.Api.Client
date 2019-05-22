@@ -1793,6 +1793,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private bool coresPerSocketFieldSpecified;
 
+        /// <remarks/>
+        public AdvancedVirtualizationSettingsType advancedVirtualizationSettings;
+
         private string idField;
 
         /// <remarks/>
@@ -1856,6 +1859,50 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class AdvancedVirtualizationSettingsType
+    {
+        /// <remarks/>
+        public bool? nestedHardwareVirtualization;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool nestedHardwareVirtualizationSpecified
+        {
+            get { return this.nestedHardwareVirtualization != null; }
+            set { this.nestedHardwareVirtualizationSpecified = value; }
+        }
+
+        /// <remarks/>
+        public string cpuLatencySensitivity;
+
+        /// <remarks/>
+        public bool? numaAutosize;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool numaAutosizeSpecified
+        {
+            get { return this.numaAutosize != null; }
+            set { this.numaAutosizeSpecified = value; }
+        }
+
+        /// <remarks/>
+        public bool? enableHostInfoToVmTools;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool enableHostInfoToVmToolsSpecified
+        {
+            get { return this.enableHostInfoToVmTools != null; }
+            set { this.enableHostInfoToVmToolsSpecified = value; }
+        }
+    }
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
