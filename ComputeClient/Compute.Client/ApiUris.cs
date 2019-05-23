@@ -18,7 +18,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.9 prefix. </summary>
         public const string MCP2_9_PREFIX = "caas/2.9/";
 
-        /// <summary>	The MCP 2.9 prefix. </summary>
+        /// <summary>	The MCP 2.10 prefix. </summary>
         public const string MCP2_10_PREFIX = "caas/2.10/";
 
         /// <summary>
@@ -2264,7 +2264,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ReconfigureServer(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_9_PREFIX + "{0}/server/reconfigureServer", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_10_PREFIX + "{0}/server/reconfigureServer", orgId), UriKind.Relative);
         }
 
         /// <summary>Retrieves a list of compatible target Servers for an Out of Place given a specific deployed Server and Backup Client Type as input.</summary>
