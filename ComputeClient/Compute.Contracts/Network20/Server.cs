@@ -1769,94 +1769,57 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("reconfigureServer", Namespace = "urn:didata.com:api:cloud:types",
-        IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute("reconfigureServer", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
     public partial class ReconfigureServerType
     {
 
-        private uint memoryGbField;
-
-        private bool memoryGbFieldSpecified;
-
-        private uint cpuCountField;
-
-        private bool cpuCountFieldSpecified;
-
-        private string cpuSpeedField;
-
-        private uint coresPerSocketField;
-
-        private bool coresPerSocketFieldSpecified;
-
         /// <remarks/>
-        public AdvancedVirtualizationSettingsType advancedVirtualizationSettings;
-
-        private string idField;
-
-        /// <remarks/>
-        public uint memoryGb
-        {
-            get { return this.memoryGbField; }
-            set { this.memoryGbField = value; }
-        }
+        public uint? memoryGb;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool memoryGbSpecified
         {
-            get { return this.memoryGbFieldSpecified; }
-            set { this.memoryGbFieldSpecified = value; }
+            get { return this.memoryGb != null; }
+            set { this.memoryGbSpecified = value; }
         }
 
         /// <remarks/>
-        public uint cpuCount
-        {
-            get { return this.cpuCountField; }
-            set { this.cpuCountField = value; }
-        }
+        public uint? cpuCount;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool cpuCountSpecified
         {
-            get { return this.cpuCountFieldSpecified; }
-            set { this.cpuCountFieldSpecified = value; }
+            get { return this.cpuCount != null; }
+            set { this.cpuCountSpecified = value; }
         }
 
         /// <remarks/>
-        public string cpuSpeed
-        {
-            get { return this.cpuSpeedField; }
-            set { this.cpuSpeedField = value; }
-        }
+        public string cpuSpeed;
 
         /// <remarks/>
-        public uint coresPerSocket
-        {
-            get { return this.coresPerSocketField; }
-            set { this.coresPerSocketField = value; }
-        }
+        public uint? coresPerSocket;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool coresPerSocketSpecified
         {
-            get { return this.coresPerSocketFieldSpecified; }
-            set { this.coresPerSocketFieldSpecified = value; }
+            get { return this.coresPerSocket != null; }
+            set { this.coresPerSocketSpecified = value; }
         }
 
         /// <remarks/>
+        public AdvancedVirtualizationSettingsType advancedVirtualizationSettings;
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
-        {
-            get { return this.idField; }
-            set { this.idField = value; }
-        }
+        public string id;
     }
 
     /// <remarks/>
